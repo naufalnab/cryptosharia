@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CryptoSharia News</title>
+  <meta name="description" content="Portal berita seputar crypto & syariah: fatwa, teknologi, dan pasar." />
+  <style>
+    :root{
+      --bg:#0b0f14;          /* dark slate */
+      --elev:#121823;        /* card bg */
+      --text:#e6eef7;
+      --muted:#90a3b3;
+      --brand:#21c55d;       /* emerald */
+      --accent:#0ea5e9;      /* sky */
+      --danger:#ef4444;      /* red */
+      --ring: 0 0 0 2px rgba(14,165,233,.4);
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:linear-gradient(180deg,#0a0f14,#0a1218 30%,#0b141c);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,90vw);margin-inline:auto}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(11,15,20,.7);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.9rem 0}
+    .brand{display:flex;align-items:center;gap:.65rem}
+    .logo{width:36px;aspect-ratio:1;border-radius:12px;background:conic-gradient(from 200deg,var(--brand),var(--accent));box-shadow:0 6px 18px rgba(33,197,93,.35)}
+    .title{font-weight:800;letter-spacing:.2px}
+    .pill{padding:.25rem .6rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:.85rem}
+    .search{display:flex;align-items:center;gap:.5rem;background:var(--elev);border:1px solid rgba(255,255,255,.06);padding:.5rem .75rem;border-radius:12px;width:min(360px,48vw)}
+    .search input{all:unset;flex:1;color:var(--text)}
+
+    /* ===== Carousel ===== */
+    .carousel{position:relative;margin:1.2rem 0 1.4rem;border-radius:var(--radius);overflow:hidden;background:#070a0f;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06)}
+    .slides{display:flex;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+    .slide{min-width:100%;position:relative;aspect-ratio:16/9;display:grid;place-items:end start}
+    .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05) brightness(.95)}
+    .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0),rgba(0,0,0,.3) 40%,rgba(0,0,0,.75))}
+    .slide-content{position:relative;padding:1.1rem;max-width:75ch}
+    .badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(33,197,93,.14);color:#c9f7da;border:1px solid rgba(33,197,93,.35);padding:.25rem .6rem;border-radius:999px;font-size:.8rem;margin-bottom:.4rem}
+    .slide h2{margin:.1rem 0 .35rem;line-height:1.25;font-size:clamp(1.1rem,2.6vw,1.6rem)}
+    .meta{color:#c9d5e1;opacity:.9;font-size:.9rem}
+    .ctrl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 .4rem;pointer-events:none}
+    .btn{pointer-events:auto;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(10,14,19,.6);border:1px solid rgba(255,255,255,.1);cursor:pointer}
+    .btn:focus-visible{outline:var(--ring)}
+    .dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:.4rem}
+    .dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);cursor:pointer}
+    .dot[aria-current="true"]{background:var(--brand);border-color:transparent}
+
+    /* ===== Breaking News ===== */
+    .breaking{display:flex;align-items:center;gap:.75rem;background:linear-gradient(90deg,rgba(239,68,68,.25),rgba(239,68,68,.05));border:1px solid rgba(239,68,68,.35);padding:.6rem .8rem;border-radius:14px}
+    .breaking .label{display:inline-flex;align-items:center;gap:.45rem;background:rgba(239,68,68,.9);color:#fff;padding:.25rem .55rem;border-radius:999px;font-weight:700;font-size:.78rem}
+    .ticker{position:relative;overflow:hidden;flex:1}
+    .track{display:flex;gap:2rem;white-space:nowrap;will-change:transform;animation:scroll 30s linear infinite}
+    .ticker:hover .track{animation-play-state:paused}
+    .item{opacity:.95}
+    .item a{color:#fff}
+    @keyframes scroll{from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ===== Trending ===== */
+    .section{margin:1.4rem 0}
+    .section h3{margin:.4rem 0 .6rem;font-size:1.25rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{grid-column:span 12;background:var(--elev);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card .body{padding:.9rem}
+    .kicker{font-size:.78rem;color:#b9d8ff;letter-spacing:.2px}
+    .card h4{margin:.35rem 0 .4rem;font-size:1.05rem;line-height:1.35}
+    .tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;padding:.15rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+    .tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.35rem}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:.5rem;color:var(--muted);font-size:.85rem}
+
+    @media (min-width:680px){
+      .card{grid-column:span 6}
+      .card img{height:200px}
+    }
+    @media (min-width:980px){
+      .card{grid-column:span 4}
+      .slide h2{font-size:1.8rem}
+    }
+
+    /* Utilities */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    .muted{color:var(--muted)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);margin:1.2rem 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Top Navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">CryptoSharia<span style="color:var(--brand)">.news</span></div>
+          <div class="muted" style="font-size:.85rem">Berita crypto yang selaras syariah</div>
+        </div>
+      </div>
+
+      <div class="search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <input type="text" id="q" placeholder="Cari: fatwa, proyek, exchange…" aria-label="Cari berita" />
+      </div>
+
+      <span class="pill" id="clock" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <main class="container" id="app" tabindex="-1">
+    <!-- ===== Carousel ===== -->
+    <section class="carousel" aria-roledescription="carousel" aria-label="Sorotan Utama" id="carousel">
+      <div class="slides" id="slides"></div>
+      <div class="ctrl">
+        <button class="btn" id="prev" aria-label="Sebelumnya">❮</button>
+        <button class="btn" id="next" aria-label="Selanjutnya">❯</button>
+      </div>
+      <div class="dots" id="dots" aria-hidden="false"></div>
+    </section>
+
+    <!-- ===== Breaking News ===== -->
+    <section class="breaking" aria-label="Breaking News">
+      <span class="label">Breaking</span>
+      <div class="ticker" aria-live="polite" aria-atomic="true">
+        <div class="track" id="tickerTrack"></div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- ===== Top Trending ===== -->
+    <section class="section" aria-labelledby="trendingHeading">
+      <h3 id="trendingHeading">Top Trending Articles</h3>
+      <div class="grid" id="trending"></div>
+    </section>
+  </main>
+
+  <footer class="container" style="padding:2rem 0;color:var(--muted);font-size:.9rem">
+    © <span id="year"></span> CryptoSharia.news · Kurasi berita crypto berperspektif syariah
+  </footer>
+
+  <script>
+    // ===== Sample Data (replace with real API later) =====
+    const headlines = [
+      {
+        title:"Dewan Syariah: Pedoman Zakat Aset Kripto Diluncurkan di ASEAN",
+        kicker:"Syariah & Regulasi",
+        meta:"13 Sep 2025 · 5 menit baca",
+        img:"https://fintechnews.sg/wp-content/uploads/2024/04/Crypto-Adoption-in-South-East-Asia.jpg",
+        href:"#"
+      },
+      {
+        title:"Layer-2 Halal? Audit Akad pada Jaringan Pembayaran Non-Riba",
+        kicker:"Riset & Fatwa",
+        meta:"12 Sep 2025 · 7 menit baca",
+        img:"https://iq.wiki/cdn-cgi/image/width=1920,quality=70/https://ipfs.everipedia.org/ipfs/QmWgqc857PeLsFPDd65enjbKq7rVSnuLGTDYAgfJ7P5RdY",
+        href:"#"
+      },
+      {
+        title:"Exchange Bebas Margin? Studi Perbandingan Model Spot vs Derivatif",
+        kicker:"Teknologi & Pasar",
+        meta:"10 Sep 2025 · 6 menit baca",
+        img:"https://images.unsplash.com/photo-1738806399423-52dd345d2232?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        href:"#"
+      }
+    ];
+
+    const breaking = [
+      { text:"Majelis X merilis draf fatwa aset digital – publik diminta beri masukan", href:"#"},
+      { text:"Jaringan Y hentikan layanan pinjaman berbunga, fokus ke spot", href:"#"},
+      { text:"Stablecoin emas syariah terbitkan laporan cadangan independen", href:"#"},
+      { text:"Bursa Z menambahkan filter 'no-margin, no-futures'", href:"#"}
+    ];
+
+    const trending = [
+      {
+        title:"Panduan Menilai Kehalalan Proyek Crypto: Akad, Riba, Gharar",
+        kicker:"Panduan Praktis",
+        img:"https://wp.coinvestasi.com/wp-content/uploads/2021/11/Tiga-Alasan-Crypto-Haram-Menurut-MUI-1024x576.jpg",
+        read:"8 menit",
+        tags:["Fiqh Muamalah","Spot Only","No Lending"],
+        href:"#"
+      },
+      {
+        title:"Apakah Staking = Ijarah? Membongkar Analogi & Konsekuensinya",
+        kicker:"Opini Ulama",
+        img:"https://reku.id/_next/image?url=https%3A%2F%2Fapi-blog.reku.id%2Fwp-content%2Fuploads%2F2024%2F07%2Fapa-itu-staking-crypto.webp&w=3840&q=75",
+        read:"6 menit",
+        tags:["Staking","Ijarah","Kaidah"],
+        href:"#"
+      },
+      {
+        title:"Checklist Syariah untuk Exchange: Dari KYC hingga Mekanisme Market",
+        kicker:"Audit",
+        img:"https://www.neugroup.com/wp-content/uploads/2022/07/kyc-small.jpeg",
+        read:"9 menit",
+        tags:["Exchange","Audit","Tanpa Margin"],
+        href:"#"
+      },
+      {
+        title:"Zakat Kripto: Metode Penilaian, Nishab, dan Waktu Pembayaran",
+        kicker:"Zakat",
+        img:"https://tunaizakat.my/wp-content/uploads/2024/05/MicrosoftTeams-image-37.webp",
+        read:"7 menit",
+        tags:["Zakat","Portofolio","Fiqh"],
+        href:"#"
+      },
+      {
+        title:"Token Beragun Aset (RWA): Bagaimana Menilai Kepemilikan Riil?",
+        kicker:"Riset RWA",
+        img:"https://blog.pintu.co.id/wp-content/uploads/2023/12/rwa-crypto.jpg",
+        read:"10 menit",
+        tags:["RWA","Due Diligence"],
+        href:"#"
+      },
+      {
+        title:"NFT sebagai Bukti Kepemilikan: Antara Milkiyah dan Hak Guna",
+        kicker:"Hukum & Teknologi",
+        img:"https://blog.pintu.co.id/wp-content/uploads/2023/09/nft-adalah.jpg",
+        read:"6 menit",
+        tags:["NFT","Hak"],
+        href:"#"
+      }
+    ];
+
+    // ===== DOM refs
+    const slidesEl = document.getElementById('slides');
+    const dotsEl   = document.getElementById('dots');
+    const carousel = document.getElementById('carousel');
+    let idx = 0, timer;
+
+    // ===== Render Carousel =====
+    function renderSlides(){
+      slidesEl.innerHTML = headlines.map((h,i)=>`
+        <article class="slide" aria-roledescription="slide" aria-label="${i+1} dari ${headlines.length}">
+          <img src="${h.img}" alt="${h.kicker}: ${h.title}">
+          <div class="slide-content">
+            <span class="badge">${h.kicker}</span>
+            <h2><a href="${h.href}">${h.title}</a></h2>
+            <div class="meta">${h.meta}</div>
+          </div>
+        </article>
+      `).join('');
+      dotsEl.innerHTML = headlines.map((_,i)=>`
+        <button class="dot" aria-label="Ke slide ${i+1}" aria-current="${i===idx}"></button>
+      `).join('');
+      updateSlide(0);
+    }
+
+    function updateSlide(delta){
+      idx = (idx + delta + headlines.length) % headlines.length;
+      slidesEl.style.transform = `translateX(-${idx * 100}%)`;
+      [...dotsEl.children].forEach((d,i)=>d.setAttribute('aria-current', i===idx));
+    }
+
+    function autoplay(){
+      clearInterval(timer);
+      timer = setInterval(()=>updateSlide(1), 5200);
+    }
+
+    document.getElementById('prev').addEventListener('click', ()=>{ updateSlide(-1); autoplay(); });
+    document.getElementById('next').addEventListener('click', ()=>{ updateSlide(1); autoplay(); });
+    dotsEl.addEventListener('click', (e)=>{
+      if(e.target.classList.contains('dot')){
+        const i = [...dotsEl.children].indexOf(e.target);
+        idx = i; updateSlide(0); autoplay();
+      }
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', ()=>clearInterval(timer));
+    carousel.addEventListener('mouseleave', autoplay);
+
+    // Basic swipe support
+    let startX = 0, isDown = false;
+    slidesEl.addEventListener('pointerdown', e=>{ isDown = true; startX = e.clientX; });
+    window.addEventListener('pointerup', e=>{
+      if(!isDown) return;
+      isDown = false;
+      const dx = e.clientX - startX;
+      if(Math.abs(dx) > 40){ updateSlide(dx < 0 ? 1 : -1); autoplay(); }
+    });
+
+    // ===== Breaking News Ticker =====
+    function renderTicker(){
+      const track = document.getElementById('tickerTrack');
+      const html = breaking.map(i=>`<span class="item">• <a href="${i.href}">${i.text}</a></span>`).join('  ');
+      track.innerHTML = html + html; // duplicate for seamless loop
+    }
+
+    // ===== Trending Grid =====
+    function renderTrending(){
+      const grid = document.getElementById('trending');
+      grid.innerHTML = trending.map(t=>`
+        <article class="card">
+          <a href="${t.href}">
+            <img src="${t.img}" alt="${t.kicker}">
+          </a>
+          <div class="body">
+            <div class="row">
+              <span class="kicker">${t.kicker}</span>
+              <span class="muted">${t.read}</span>
+            </div>
+            <h4><a href="${t.href}">${t.title}</a></h4>
+            <div class="tags">${t.tags.map(x=>`<span class="tag">${x}</span>`).join('')}</div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // ===== Search (client-side filter for demo) =====
+    document.getElementById('q').addEventListener('input', e=>{
+      const q = e.target.value.trim().toLowerCase();
+      const filtered = trending.filter(t=> (t.title + ' ' + t.kicker + ' ' + t.tags.join(' ')).toLowerCase().includes(q));
+      const grid = document.getElementById('trending');
+      const data = q ? filtered : trending;
+      grid.innerHTML = data.map(t=>`
+        <article class="card">
+          <a href="${t.href}">
+            <img src="${t.img}" alt="${t.kicker}">
+          </a>
+          <div class="body">
+            <div class="row">
+              <span class="kicker">${t.kicker}</span>
+              <span class="muted">${t.read}</span>
+            </div>
+            <h4><a href="${t.href}">${t.title}</a></h4>
+            <div class="tags">${t.tags.map(x=>`<span class="tag">${x}</span>`).join('')}</div>
+          </div>
+        </article>
+      `).join('');
+    });
+
+    // ===== Clock & Foot =====
+    function tickClock(){
+      const d = new Date();
+      const opts = { hour:'2-digit', minute:'2-digit' };
+      document.getElementById('clock').textContent = new Intl.DateTimeFormat('id-ID', opts).format(d);
+      document.getElementById('year').textContent = d.getFullYear();
+    }
+
+    // ===== Init =====
+    renderSlides();
+    renderTicker();
+    renderTrending();
+    autoplay();
+    tickClock();
+    setInterval(tickClock, 15000);
+
+    // Accessibility: allow arrow key control on carousel
+    carousel.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft')  document.getElementById('prev').click();
+      if(e.key === 'ArrowRight') document.getElementById('next').click();
+    });
+  </script>
+</body>
+</html>
