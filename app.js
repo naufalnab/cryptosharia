@@ -59,28 +59,28 @@ const EDU = {
 
 /* ---------- Discord Data ---------- */
 const DISCORD_CHANNELS = [
-  { title: "Signal Coin (Spot Only)", kicker: "Signal", img: "https://images.unsplash.com/photo-1518779578390-8029a9a86c63?q=80&w=1200&auto=format&fit=crop", read: "Realtime", tags: ["No Margin", "Risk Note"], href: "#join" },
+  { title: "Signal Coin (Spot Only)", kicker: "Signal", img: "https://th.bing.com/th/id/OIG4.eS1qx1oyXZaXIfjQeGPX?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Realtime", tags: ["No Margin", "Risk Note"], href: "#join" },
   { title: "Diskusi Trader Harian", kicker: "Diskusi", img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop", read: "24/7", tags: ["Teknis", "Fundamental"], href: "#join" },
-  { title: "Arbitrage (CEX-CEX)", kicker: "Arbitrage", img: "https://images.unsplash.com/photo-1504691342899-9d7eea6fc43f?q=80&w=1200&auto=format&fit=crop", read: "Opportunistic", tags: ["Spot", "Fee Aware"], href: "#join" },
-  { title: "Airdrop & Testnet", kicker: "Airdrop", img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1200&auto=format&fit=crop", read: "Kurasi", tags: ["Guide", "No Scam"], href: "#join" },
+  { title: "Arbitrage (CEX-CEX)", kicker: "Arbitrage", img: "https://pintu-academy.pintukripto.com/wp-content/uploads/2023/08/image-40.png", read: "Opportunistic", tags: ["Spot", "Fee Aware"], href: "#join" },
+  { title: "Airdrop & Testnet", kicker: "Airdrop", img: "https://blog.pintu.co.id/wp-content/uploads/2024/02/aridrop-crypto-gaming.jpg", read: "Kurasi", tags: ["Guide", "No Scam"], href: "#join" },
 ];
 
 /* ---------- Konsultan Data ---------- */
 const SERVICES = [
-  { title: "Verifikasi Project (Sharia Review)", kicker: "Layanan", img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop", read: "3-7 hari", tags: ["Akad", "Tokenomics"], href: "#request" },
-  { title: "Sharia Compliance Audit", kicker: "Audit", img: "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?q=80&w=1200&auto=format&fit=crop", read: "7-14 hari", tags: ["Dokumen", "Rekomendasi"], href: "#request" },
-  { title: "Advisor Crypto & Blockchain", kicker: "Advisory", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop", read: "Retainer", tags: ["Strategy", "Governance"], href: "#request" },
+  { title: "Verifikasi Project (Sharia Review)", kicker: "Layanan", img: "https://th.bing.com/th/id/OIG2.53.9WANjt0JUxXkcKMNo?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "3-7 hari", tags: ["Akad", "Tokenomics"], href: "#request" },
+  { title: "Sharia Compliance Audit", kicker: "Audit", img: "https://th.bing.com/th/id/OIG2.YWEPhUULwt416CbXTqSz?pid=ImgGn", read: "7-14 hari", tags: ["Dokumen", "Rekomendasi"], href: "#request" },
+  { title: "Advisor Crypto & Blockchain", kicker: "Advisory", img: "https://th.bing.com/th/id/OIG2.99dlkpEzZSI9Sz0Avt3X?pid=ImgGn", read: "Retainer", tags: ["Strategy", "Governance"], href: "#request" },
 ];
 
 /* ---------- Webminar Data ---------- */
 const WEBMINARS = {
   upcoming: [
-    { title: "Zakat Kripto: Nishab & Waktu Pembayaran", kicker: "Upcoming · 28 Sep 2025", img: "https://images.unsplash.com/photo-1554224154-22fee17c0e58?q=80&w=1200&auto=format&fit=crop", read: "90 menit", tags: ["Zakat","Portfolio"], href: "#daftar" },
-    { title: "Staking Halal? Ijarah vs Lending", kicker: "Upcoming · 05 Okt 2025", img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop", read: "75 menit", tags: ["Staking","Fatwa"], href: "#daftar" },
+    { title: "Zakat Kripto: Nishab & Waktu Pembayaran", kicker: "Upcoming · 28 Sep 2025", img: "https://th.bing.com/th/id/OIG1.Z7GlZNmvOic4SXqsc.nI?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "90 menit", tags: ["Zakat","Portfolio"], href: "#daftar" },
+    { title: "Staking Halal? Ijarah vs Lending", kicker: "Upcoming · 05 Okt 2025", img: "https://th.bing.com/th/id/OIG2.sTf6U0R6AMaQX0eu_u2H?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "75 menit", tags: ["Staking","Fatwa"], href: "#daftar" },
   ],
   past: [
-    { title: "Audit Exchange: No-Margin, No-Futures", kicker: "Selesai · 20 Agu 2025", img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop", read: "Replay", tags: ["Exchange","Compliance"], href: "#rekaman" },
-    { title: "RWA: Kepemilikan Riil & Resiko", kicker: "Selesai · 30 Jul 2025", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop", read: "Replay", tags: ["RWA","Legal"], href: "#rekaman" },
+    { title: "Audit Exchange: No-Margin, No-Futures", kicker: "Selesai · 20 Agu 2025", img: "https://th.bing.com/th/id/OIG2.S9dbei6TAnBE1QBBFU2d?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["Exchange","Compliance"], href: "#rekaman" },
+    { title: "RWA: Kepemilikan Riil & Resiko", kicker: "Selesai · 30 Jul 2025", img: "https://th.bing.com/th/id/OIG1.H8e3IQ5fT2GNgcnoIvYu?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["RWA","Legal"], href: "#rekaman" },
   ],
 };
 
