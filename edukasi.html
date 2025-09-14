@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edukasi · CryptoSharia News</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="menu" aria-label="Primary">
+      <a href="index.html" data-page="index.html">Berita</a>
+      <a href="edukasi.html" data-page="edukasi.html">Edukasi</a>
+      <a href="discord.html" data-page="discord.html">Discord Premium</a>
+      <a href="konsultan.html" data-page="konsultan.html">Konsultan Crypto Sharia</a>
+      <a href="webminar.html" data-page="webminar.html">Webminar</a>
+    </nav>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">CryptoSharia<span style="color:var(--brand)">.news</span></div>
+          <div class="muted" style="font-size:.85rem">Belajar sharia, blockchain & crypto</div>
+        </div>
+      </div>
+      <div class="search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
+        <input type="text" id="edu-q" placeholder="Cari materi: sharia, blockchain, crypto…" aria-label="Cari edukasi"/>
+      </div>
+      <span class="pill" id="clock"></span>
+    </div>
+  </header>
+
+  <main class="container" id="app" tabindex="-1">
+    <section class="section">
+      <h3>Sharia</h3>
+      <div class="grid" id="edu-sharia"></div>
+    </section>
+    <section class="section">
+      <h3>Blockchain</h3>
+      <div class="grid" id="edu-blockchain"></div>
+    </section>
+    <section class="section">
+      <h3>Crypto</h3>
+      <div class="grid" id="edu-crypto"></div>
+    </section>
+  </main>
+
+  <footer class="container" style="padding:2rem 0;color:var(--muted);font-size:.9rem">
+    © <span id="year"></span> CryptoSharia.news
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Konsultan Crypto Sharia · CryptoSharia News</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+  <nav class="menu" aria-label="Primary">
+    <a href="index.html" data-page="index.html">Berita</a>
+    <a href="edukasi.html" data-page="edukasi.html">Edukasi</a>
+    <a href="discord.html" data-page="discord.html">Discord Premium</a>
+    <a href="konsultan.html" data-page="konsultan.html">Konsultan Crypto Sharia</a>
+    <a href="webminar.html" data-page="webminar.html">Webminar</a>
+  </nav>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div class="title">Konsultan<span style="color:var(--brand)"> Sharia</span></div>
+        <div class="muted" style="font-size:.85rem">Verifikasi project · Sharia compliance · Advisor crypto & blockchain</div>
+      </div>
+    </div>
+    <span class="pill" id="clock"></span>
+  </div>
+</header>
+
+<main class="container" id="app" tabindex="-1">
+  <section class="section">
+    <h3>Layanan</h3>
+    <div class="grid" id="svc-list"></div>
+  </section>
+
+  <section class="section">
+    <h3>Ajukan Konsultasi</h3>
+    <div class="card" style="padding:1rem">
+      <form id="consult-form">
+        <div style="display:grid;gap:.75rem">
+          <input style="all:unset;background:var(--elev);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.75rem" name="name" placeholder="Nama lengkap" required>
+          <input style="all:unset;background:var(--elev);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.75rem" name="email" type="email" placeholder="Email" required>
+          <input style="all:unset;background:var(--elev);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.75rem" name="project" placeholder="Nama proyek / token / exchange">
+          <textarea style="all:unset;background:var(--elev);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.75rem;min-height:120px" name="desc" placeholder="Ringkas kebutuhan: verifikasi akad, audit kepatuhan, advisor, dsb." required></textarea>
+          <button type="submit" class="btn" style="width:fit-content;padding:0 .9rem;height:42px">Kirim</button>
+          <span class="muted" id="consult-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="container" style="padding:2rem 0;color:var(--muted);font-size:.9rem">
+  © <span id="year"></span> CryptoSharia.news
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
