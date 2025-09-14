@@ -1,11 +1,13 @@
 /* ---------- Shared Utilities ---------- */
 function setYearAndClock() {
   const d = new Date();
-  const opts = { hour: "2-digit", minute: "2-digit" };
-  const clock = document.getElementById("clock");
-  if (clock) clock.textContent = new Intl.DateTimeFormat("id-ID", opts).format(d);
   const year = document.getElementById("year");
   if (year) year.textContent = d.getFullYear();
+  const clock = document.getElementById("clock");
+  if (clock && window.matchMedia("(min-width:901px)").matches) {
+    const opts = { hour: "2-digit", minute: "2-digit" };
+    clock.textContent = new Intl.DateTimeFormat("id-ID", opts).format(d);
+  }
 }
 setYearAndClock();
 setInterval(setYearAndClock, 15000);
@@ -138,6 +140,28 @@ if (page === "index.html" || page === "") {
   }
   function autoplay() { clearInterval(timer); timer = setInterval(() => updateSlide(1), 5200); }
   renderSlides();
+  // Swipe handling untuk carousel
+
+    const slidesEl2 = document.getElementById("slides");
+    if (slidesEl2) {
+    slidesEl2.addEventListener("pointerdown", (e) => {
+        if (window.matchMedia("(min-width: 901px)").matches) { // hanya desktop
+        isDown = true;
+        startX = e.clientX;
+        }
+    });
+
+    window.addEventListener("pointerup", (e) => {
+        if (!isDown) return;
+        isDown = false;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) {
+        updateSlide(dx < 0 ? 1 : -1);
+        autoplay();
+        }
+    });
+    }
+
   document.getElementById("prev")?.addEventListener("click", () => { updateSlide(-1); autoplay(); });
   document.getElementById("next")?.addEventListener("click", () => { updateSlide(1); autoplay(); });
   dotsEl?.addEventListener("click", (e) => {
@@ -226,3 +250,40 @@ if (page === "webminar.html") {
     renderCardsInto(document.getElementById("wb-past"), q ? filt(WEBMINARS.past) : WEBMINARS.past);
   });
 }
+
+// Bottom nav: set active & aria-current berdasarkan halaman
+(function () {
+  const file = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  document.querySelectorAll(".bottom-nav .tab").forEach(a => {
+    const isActive = a.dataset.page && a.dataset.page.toLowerCase() === file;
+    a.classList.toggle("active", isActive);
+    a.setAttribute("aria-current", isActive ? "page" : "false");
+  });
+  
+  // iOS safe-area inset fallback: jika env() tidak didukung
+  const supportsEnv = CSS && CSS.supports && CSS.supports('padding-bottom: env(safe-area-inset-bottom)');
+  if (!supportsEnv) {
+    document.documentElement.style.setProperty('--safe-bottom', '0px');
+  }
+
+  // Hindari double-scroll saat keyboard muncul di mobile
+  // (opsional) kecilkan padding saat input fokus
+  const inputs = document.querySelectorAll('input, textarea');
+  inputs.forEach(el => {
+    el.addEventListener('focus', () => document.body.classList.add('kb-open'));
+    el.addEventListener('blur', () => document.body.classList.remove('kb-open'));
+  });
+})();
+
+// Back-to-top visibility + action
+(function () {
+  const btn = document.getElementById('toTop');
+  if (!btn) return;
+  const onScroll = () => {
+    const y = window.scrollY || document.documentElement.scrollTop;
+    btn.classList.toggle('show', y > 600);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
