@@ -43,7 +43,7 @@ const trending = [
   { title: "NFT sebagai Bukti Kepemilikan: Antara Milkiyah dan Hak Guna", kicker: "Hukum & Teknologi", img: "https://blog.pintu.co.id/wp-content/uploads/2023/09/nft-adalah.jpg", read: "6 menit", tags: ["NFT", "Hak"], href: "#" },
 ];
 
-/* ---------- Edukasi Data ---------- */
+/* ---------- Education Data ---------- */
 const EDU = {
   sharia: [
     { title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah", kicker: "Sharia", img: "https://media.canva.com/v2/image-resize/format:PNG/height:309/quality:100/uri:ifs%3A%2F%2FM%2F466ee22c-e7c7-4eb0-aa65-d3cb52b3b00c/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAJEvSeu6GJ9J2ze-I8Qj-Oc-FNdJRh7ujpvhuQh0YD44&exp=1757841066&osig=AAAAAAAAAAAAAAAAAAAAAHdxskIQsAQfee1riNNheHPVRxlkZ5ZUeL6noVN_Pvvu&signer=media-rpc&x-canva-quality=thumbnail_large", read: "9 menit", tags: ["Akad", "Muamalah"], href: "#" },
@@ -67,22 +67,22 @@ const DISCORD_CHANNELS = [
   { title: "Airdrop & Testnet", kicker: "Airdrop", img: "https://blog.pintu.co.id/wp-content/uploads/2024/02/aridrop-crypto-gaming.jpg", read: "Kurasi", tags: ["Guide", "No Scam"], href: "#join" },
 ];
 
-/* ---------- Konsultan Data ---------- */
+/* ---------- Consultant Data ---------- */
 const SERVICES = [
   { title: "Verifikasi Project (Sharia Review)", kicker: "Layanan", img: "https://th.bing.com/th/id/OIG2.53.9WANjt0JUxXkcKMNo?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "3-7 hari", tags: ["Akad", "Tokenomics"], href: "#request" },
   { title: "Sharia Compliance Audit", kicker: "Audit", img: "https://th.bing.com/th/id/OIG2.YWEPhUULwt416CbXTqSz?pid=ImgGn", read: "7-14 hari", tags: ["Dokumen", "Rekomendasi"], href: "#request" },
   { title: "Advisor Crypto & Blockchain", kicker: "Advisory", img: "https://th.bing.com/th/id/OIG2.99dlkpEzZSI9Sz0Avt3X?pid=ImgGn", read: "Retainer", tags: ["Strategy", "Governance"], href: "#request" },
 ];
 
-/* ---------- Webminar Data ---------- */
-const WEBMINARS = {
+/* ---------- webinar Data ---------- */
+const webinarS = {
   upcoming: [
-    { title: "Zakat Kripto: Nishab & Waktu Pembayaran", kicker: "Upcoming · 28 Sep 2025", img: "https://th.bing.com/th/id/OIG1.Z7GlZNmvOic4SXqsc.nI?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "90 menit", tags: ["Zakat","Portfolio"], href: "#daftar" },
-    { title: "Staking Halal? Ijarah vs Lending", kicker: "Upcoming · 05 Okt 2025", img: "https://th.bing.com/th/id/OIG2.sTf6U0R6AMaQX0eu_u2H?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "75 menit", tags: ["Staking","Fatwa"], href: "#daftar" },
+    { title: "Zakat Kripto: Nishab & Waktu Pembayaran", kicker: "Upcoming · 28 Sep 2025", img: "https://th.bing.com/th/id/OIG1.Z7GlZNmvOic4SXqsc.nI?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "90 menit", tags: ["Zakat", "Portfolio"], href: "#daftar" },
+    { title: "Staking Halal? Ijarah vs Lending", kicker: "Upcoming · 05 Okt 2025", img: "https://th.bing.com/th/id/OIG2.sTf6U0R6AMaQX0eu_u2H?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "75 menit", tags: ["Staking", "Fatwa"], href: "#daftar" },
   ],
   past: [
-    { title: "Audit Exchange: No-Margin, No-Futures", kicker: "Selesai · 20 Agu 2025", img: "https://th.bing.com/th/id/OIG2.S9dbei6TAnBE1QBBFU2d?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["Exchange","Compliance"], href: "#rekaman" },
-    { title: "RWA: Kepemilikan Riil & Resiko", kicker: "Selesai · 30 Jul 2025", img: "https://th.bing.com/th/id/OIG1.H8e3IQ5fT2GNgcnoIvYu?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["RWA","Legal"], href: "#rekaman" },
+    { title: "Audit Exchange: No-Margin, No-Futures", kicker: "Selesai · 20 Agu 2025", img: "https://th.bing.com/th/id/OIG2.S9dbei6TAnBE1QBBFU2d?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["Exchange", "Compliance"], href: "#rekaman" },
+    { title: "RWA: Kepemilikan Riil & Resiko", kicker: "Selesai · 30 Jul 2025", img: "https://th.bing.com/th/id/OIG1.H8e3IQ5fT2GNgcnoIvYu?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Replay", tags: ["RWA", "Legal"], href: "#rekaman" },
   ],
 };
 
@@ -142,25 +142,25 @@ if (page === "index.html" || page === "") {
   renderSlides();
   // Swipe handling untuk carousel
 
-    const slidesEl2 = document.getElementById("slides");
-    if (slidesEl2) {
+  const slidesEl2 = document.getElementById("slides");
+  if (slidesEl2) {
     slidesEl2.addEventListener("pointerdown", (e) => {
-        if (window.matchMedia("(min-width: 901px)").matches) { // hanya desktop
+      if (window.matchMedia("(min-width: 901px)").matches) { // hanya desktop
         isDown = true;
         startX = e.clientX;
-        }
+      }
     });
 
     window.addEventListener("pointerup", (e) => {
-        if (!isDown) return;
-        isDown = false;
-        const dx = e.clientX - startX;
-        if (Math.abs(dx) > 40) {
+      if (!isDown) return;
+      isDown = false;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 40) {
         updateSlide(dx < 0 ? 1 : -1);
         autoplay();
-        }
+      }
     });
-    }
+  }
 
   document.getElementById("prev")?.addEventListener("click", () => { updateSlide(-1); autoplay(); });
   document.getElementById("next")?.addEventListener("click", () => { updateSlide(1); autoplay(); });
@@ -190,7 +190,7 @@ if (page === "index.html" || page === "") {
   document.getElementById("q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
     const data = q
-      ? trending.filter(t => (t.title + " " + t.kicker + " " + (t.tags||[]).join(" ")).toLowerCase().includes(q))
+      ? trending.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q))
       : trending;
     renderCardsInto(document.getElementById("trending"), data);
   });
@@ -202,14 +202,14 @@ if (page === "index.html" || page === "") {
   });
 }
 
-if (page === "edukasi.html") {
+if (page === "education.html") {
   renderCardsInto(document.getElementById("edu-sharia"), EDU.sharia);
   renderCardsInto(document.getElementById("edu-blockchain"), EDU.blockchain);
   renderCardsInto(document.getElementById("edu-crypto"), EDU.crypto);
 
   document.getElementById("edu-q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
-    const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags||[]).join(" ")).toLowerCase().includes(q));
+    const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
     renderCardsInto(document.getElementById("edu-sharia"), q ? filter(EDU.sharia) : EDU.sharia);
     renderCardsInto(document.getElementById("edu-blockchain"), q ? filter(EDU.blockchain) : EDU.blockchain);
     renderCardsInto(document.getElementById("edu-crypto"), q ? filter(EDU.crypto) : EDU.crypto);
@@ -221,13 +221,13 @@ if (page === "discord.html") {
   document.getElementById("disc-q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
     const data = q
-      ? DISCORD_CHANNELS.filter(t => (t.title + " " + t.kicker + " " + (t.tags||[]).join(" ")).toLowerCase().includes(q))
+      ? DISCORD_CHANNELS.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q))
       : DISCORD_CHANNELS;
     renderCardsInto(document.getElementById("disc-channels"), data);
   });
 }
 
-if (page === "konsultan.html") {
+if (page === "consultant.html") {
   renderCardsInto(document.getElementById("svc-list"), SERVICES);
 
   // Dummy submit (tanpa backend, hanya feedback UI)
@@ -239,15 +239,15 @@ if (page === "konsultan.html") {
   });
 }
 
-if (page === "webminar.html") {
-  renderCardsInto(document.getElementById("wb-upcoming"), WEBMINARS.upcoming);
-  renderCardsInto(document.getElementById("wb-past"), WEBMINARS.past);
+if (page === "webinar.html") {
+  renderCardsInto(document.getElementById("wb-upcoming"), webinarS.upcoming);
+  renderCardsInto(document.getElementById("wb-past"), webinarS.past);
 
   document.getElementById("wb-q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
-    const filt = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags||[]).join(" ")).toLowerCase().includes(q));
-    renderCardsInto(document.getElementById("wb-upcoming"), q ? filt(WEBMINARS.upcoming) : WEBMINARS.upcoming);
-    renderCardsInto(document.getElementById("wb-past"), q ? filt(WEBMINARS.past) : WEBMINARS.past);
+    const filt = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
+    renderCardsInto(document.getElementById("wb-upcoming"), q ? filt(webinarS.upcoming) : webinarS.upcoming);
+    renderCardsInto(document.getElementById("wb-past"), q ? filt(webinarS.past) : webinarS.past);
   });
 }
 
@@ -259,7 +259,7 @@ if (page === "webminar.html") {
     a.classList.toggle("active", isActive);
     a.setAttribute("aria-current", isActive ? "page" : "false");
   });
-  
+
   // iOS safe-area inset fallback: jika env() tidak didukung
   const supportsEnv = CSS && CSS.supports && CSS.supports('padding-bottom: env(safe-area-inset-bottom)');
   if (!supportsEnv) {

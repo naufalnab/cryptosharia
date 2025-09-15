@@ -3,32 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Konsultan Crypto Sharia · CryptoSharia News</title>
+    <title>webinar · CryptoSharia News</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
       <nav class="menu" aria-label="Primary">
-        <a href="index.html" data-page="index.html">Berita</a>
-        <a href="edukasi.html" data-page="edukasi.html">Edukasi</a>
+        <a href="index.html" data-page="index.html">News</a>
+        <a href="education.html" data-page="education.html">Education</a>
         <a href="discord.html" data-page="discord.html">Discord Premium</a>
-        <a href="konsultan.html" data-page="konsultan.html"
-          >Konsultan Crypto Sharia</a
+        <a href="consultant.html" data-page="consultant.html"
+          >Consultant Crypto Sharia</a
         >
-        <a href="webminar.html" data-page="webminar.html">Webminar</a>
+        <a href="webinar.html" data-page="webinar.html">webinar</a>
       </nav>
       <div class="container nav">
         <div class="brand">
           <div class="logo" aria-hidden="true"></div>
           <div>
             <div class="title">
-              Konsultan<span style="color: var(--brand)">Sharia</span>
+              webinar<span style="color: var(--brand)">Syariah</span>
             </div>
             <div class="muted" style="font-size: 0.85rem">
-              Verifikasi project · Sharia compliance · Advisor crypto &
-              blockchain
+              Daftar webinar yang sudah & akan berlangsung
             </div>
           </div>
+        </div>
+        <div class="search" role="search">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M21 21l-4.3-4.3"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+          <input
+            id="wb-q"
+            placeholder="Cari webinar: zakat, staking, L2…"
+            aria-label="Cari webinar"
+          />
         </div>
         <span class="pill" id="clock"></span>
       </div>
@@ -36,80 +63,12 @@
 
     <main class="container" id="app" tabindex="-1">
       <section class="section">
-        <h3>Layanan</h3>
-        <div class="grid" id="svc-list"></div>
+        <h3>Upcoming</h3>
+        <div class="grid" id="wb-upcoming"></div>
       </section>
-
       <section class="section">
-        <h3>Ajukan Konsultasi</h3>
-        <div class="card" style="padding: 1rem">
-          <form id="consult-form">
-            <div style="display: grid; gap: 0.75rem">
-              <input
-                style="
-                  all: unset;
-                  background: var(--elev);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 12px;
-                  padding: 0.75rem;
-                "
-                name="name"
-                placeholder="Nama lengkap"
-                required
-              />
-              <input
-                style="
-                  all: unset;
-                  background: var(--elev);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 12px;
-                  padding: 0.75rem;
-                "
-                name="email"
-                type="email"
-                placeholder="Email"
-                required
-              />
-              <input
-                style="
-                  all: unset;
-                  background: var(--elev);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 12px;
-                  padding: 0.75rem;
-                "
-                name="project"
-                placeholder="Nama proyek / token / exchange"
-              />
-              <textarea
-                style="
-                  all: unset;
-                  background: var(--elev);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 12px;
-                  padding: 0.75rem;
-                  min-height: 120px;
-                "
-                name="desc"
-                placeholder="Ringkas kebutuhan: verifikasi akad, audit kepatuhan, advisor, dsb."
-                required
-              ></textarea>
-              <button
-                type="submit"
-                class="btn"
-                style="width: fit-content; padding: 0 0.9rem; height: 42px"
-              >
-                Kirim
-              </button>
-              <span
-                class="muted"
-                id="consult-status"
-                role="status"
-                aria-live="polite"
-              ></span>
-            </div>
-          </form>
-        </div>
+        <h3>Rekaman / Sesi Lalu</h3>
+        <div class="grid" id="wb-past"></div>
       </section>
     </main>
 
@@ -120,9 +79,9 @@
           <div class="logo" aria-hidden="true"></div>
           <div>
             <div class="title">
-              CryptoSharia<span style="color: var(--brand)">.news</span>
+              Crypto<span style="color: var(--brand)">Sharia</span>
             </div>
-            <p class="muted">Berita & edukasi crypto berperspektif syariah.</p>
+            <p class="muted">News & education crypto berperspektif syariah.</p>
           </div>
         </div>
 
@@ -210,13 +169,8 @@
 
     <script src="app.js" defer></script>
     <nav class="bottom-nav" aria-label="Menu bawah">
-      <a
-        class="tab"
-        href="index.html"
-        data-page="index.html"
-        aria-label="Berita"
-      >
-        <!-- icon berita -->
+      <a class="tab" href="index.html" data-page="index.html" aria-label="News">
+        <!-- icon news -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M4 5h14a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a2 2 0 0 1 2-2z"
@@ -232,16 +186,16 @@
             stroke-linecap="round"
           />
         </svg>
-        <span>Berita</span>
+        <span>News</span>
       </a>
 
       <a
         class="tab"
-        href="edukasi.html"
-        data-page="edukasi.html"
-        aria-label="Edukasi"
+        href="education.html"
+        data-page="education.html"
+        aria-label="Education"
       >
-        <!-- icon edukasi -->
+        <!-- icon education -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M3 7l9-4 9 4-9 4-9-4z"
@@ -258,7 +212,7 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Edukasi</span>
+        <span>Education</span>
       </a>
 
       <a
@@ -284,9 +238,9 @@
 
       <a
         class="tab"
-        href="konsultan.html"
-        data-page="konsultan.html"
-        aria-label="Konsultan Crypto Sharia"
+        href="consultant.html"
+        data-page="consultant.html"
+        aria-label="Consultant Crypto Sharia"
       >
         <!-- icon shield/check -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
@@ -305,14 +259,14 @@
             stroke-linecap="round"
           />
         </svg>
-        <span>Konsultan</span>
+        <span>Consultant</span>
       </a>
 
       <a
         class="tab"
-        href="webminar.html"
-        data-page="webminar.html"
-        aria-label="Webminar"
+        href="webinar.html"
+        data-page="webinar.html"
+        aria-label="webinar"
       >
         <!-- icon video -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
@@ -335,7 +289,7 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>Webminar</span>
+        <span>webinar</span>
       </a>
     </nav>
   </body>
