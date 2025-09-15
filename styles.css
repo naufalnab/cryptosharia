@@ -370,3 +370,62 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 @media (min-width: 980px) {
   .footer-mini { padding-left: 0; padding-right: 0; }
 }
+/* ===== Desktop Footer Refresh ===== */
+@media (min-width: 980px) {
+  .site-footer { margin-top: 2rem; }
+
+  /* Dua kolom: brand kiri, social kanan */
+  .footer-wrap {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem 3rem;
+    align-items: start;
+    padding: 1.6rem 0;
+  }
+
+  /* Brand lebih tegas */
+  .f-brand {
+    grid-template-columns: 56px 1fr;
+    gap: .8rem;
+    align-items: start;
+  }
+  .f-brand .logo {
+    width: 56px; height: 56px; border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(33,197,93,.25);
+  }
+  .f-brand .title { font-size: 1.25rem; }
+  .f-brand .muted { font-size: .95rem; max-width: 48ch; }
+
+  /* Social jadi bar tombol kompak kanan */
+  .f-social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .6rem;
+  }
+  .f-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .f-social a:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.16);
+  }
+  .f-social svg { width: 20px; height: 20px; opacity: .95; }
+  .f-social span { font-size: .95rem; }
+
+  /* Footer mini diratakan ke lebar container */
+  .footer-mini {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+    padding: .9rem 4vw calc(env(safe-area-inset-bottom) + .9rem);
+    border-top: 1px solid rgba(255,255,255,.06);
+    font-size: .9rem;
+  }
+}
