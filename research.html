@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CryptoSharia News</title>
-    <meta
-      name="description"
-      content="Portal news seputar crypto & syariah: fatwa, teknologi, dan pasar."
-    />
+    <title>Research · CryptoSharia News</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -22,20 +18,18 @@
         >
         <a href="webinar.html" data-page="webinar.html">Webinar</a>
       </nav>
-
-      <div class="container nav" role="navigation" aria-label="Top Navigation">
+      <div class="container nav">
         <div class="brand">
           <div class="logo" aria-hidden="true"></div>
           <div>
             <div class="title">
-              News<span style="color: var(--brand)">Crypto</span>
+              Research<span style="color: var(--brand)">Syariah</span>
             </div>
             <div class="muted" style="font-size: 0.85rem">
-              News crypto yang selaras syariah
+              Analisis mendalam, studi kasus, & riset teknologi
             </div>
           </div>
         </div>
-
         <div class="search" role="search">
           <svg
             width="18"
@@ -60,52 +54,32 @@
           </svg>
           <input
             type="text"
-            id="q"
-            placeholder="Search: fatwa, proyek, exchange…"
-            aria-label="Search"
+            id="res-q"
+            placeholder="Cari riset: fatwa, RWA, DeFi…"
+            aria-label="Cari riset"
           />
         </div>
-
-        <span class="pill" id="clock" aria-live="polite"></span>
+        <span class="pill" id="clock"></span>
       </div>
     </header>
 
     <main class="container" id="app" tabindex="-1">
-      <!-- ===== Carousel ===== -->
-      <section
-        class="carousel"
-        aria-roledescription="carousel"
-        aria-label="Carousel"
-        id="carousel"
-      >
-        <div class="slides" id="slides"></div>
-        <div class="ctrl">
-          <button class="btn" id="prev" aria-label="Prev">❮</button>
-          <button class="btn" id="next" aria-label="Next">❯</button>
-        </div>
-        <div class="dots" id="dots" aria-hidden="false"></div>
+      <section class="section">
+        <h3>Fatwa & Fiqh</h3>
+        <div class="grid" id="res-fatwa"></div>
       </section>
-
-      <!-- ===== Breaking News ===== -->
-      <section class="breaking" aria-label="Breaking News">
-        <span class="label">Breaking</span>
-        <div class="ticker" aria-live="polite" aria-atomic="true">
-          <div class="track" id="tickerTrack"></div>
-        </div>
+      <section class="section">
+        <h3>Teknologi & Protokol</h3>
+        <div class="grid" id="res-tech"></div>
       </section>
-
-      <div class="divider" role="separator" aria-hidden="true"></div>
-
-      <!-- ===== Top Trending ===== -->
-      <section class="section" aria-labelledby="trendingHeading">
-        <h3 id="trendingHeading">Top Trending Articles</h3>
-        <div class="grid" id="trending"></div>
+      <section class="section">
+        <h3>Studi Kasus Pasar</h3>
+        <div class="grid" id="res-market"></div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-wrap container">
-        <!-- Brand -->
         <div class="f-brand">
           <div class="logo" aria-hidden="true"></div>
           <div>
@@ -116,7 +90,6 @@
           </div>
         </div>
 
-        <!-- Social -->
         <div class="f-social" aria-label="Media sosial">
           <a href="#" aria-label="Telegram">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
@@ -188,7 +161,7 @@
       <div class="footer-mini">
         <div>© <span id="year"></span> CryptoSharia.news</div>
         <div class="mini-links">
-          <a href="#">Privacy Policy</a>
+          <a href="#">Kebijakan Privasi</a>
           <span aria-hidden="true">·</span>
           <a href="#">Disclaimer</a>
           <span aria-hidden="true">·</span>
@@ -201,7 +174,6 @@
     <script src="app.js" defer></script>
     <nav class="bottom-nav" aria-label="Menu bawah">
       <a class="tab" href="index.html" data-page="index.html" aria-label="News">
-        <!-- icon news -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M4 5h14a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a2 2 0 0 1 2-2z"
@@ -226,7 +198,6 @@
         data-page="education.html"
         aria-label="Education"
       >
-        <!-- icon education -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M3 7l9-4 9 4-9 4-9-4z"
@@ -248,11 +219,55 @@
 
       <a
         class="tab"
+        href="research.html"
+        data-page="research.html"
+        aria-label="Research"
+      >
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path
+            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <polyline
+            points="14 2 14 8 20 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <line
+            x1="16"
+            y1="13"
+            x2="8"
+            y2="13"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <line
+            x1="16"
+            y1="17"
+            x2="8"
+            y2="17"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span>Research</span>
+      </a>
+
+      <a
+        class="tab"
         href="discord.html"
         data-page="discord.html"
         aria-label="Discord Premium"
       >
-        <!-- icon chat -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
@@ -271,9 +286,8 @@
         class="tab"
         href="consultant.html"
         data-page="consultant.html"
-        aria-label="Consultant Crypto Sharia"
+        aria-label="Consultant"
       >
-        <!-- icon shield/check -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <path
             d="M12 3l7 3v6c0 4.97-3.05 8.11-7 9-3.95-.89-7-4.03-7-9V6l7-3z"
@@ -299,7 +313,6 @@
         data-page="webinar.html"
         aria-label="webinar"
       >
-        <!-- icon video -->
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
           <rect
             x="3"
@@ -320,7 +333,7 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span>webinar</span>
+        <span>Webinar</span>
       </a>
     </nav>
   </body>

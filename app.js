@@ -59,6 +59,22 @@ const EDU = {
   ],
 };
 
+/* ---------- Research Data ---------- */
+const RESEARCH_DATA = {
+  fatwa: [
+    { title: "Analisis Fatwa MUI vs Global tentang Aset Kripto", kicker: "Fatwa & Fiqh", img: "https://i.ytimg.com/vi/g_KQb77MSy4/maxresdefault.jpg", read: "12 menit", tags: ["Fatwa", "Komparasi"], href: "#" },
+    { title: "Kaidah Fiqh dalam Smart Contract: Studi Akad Syirkah", kicker: "Fatwa & Fiqh", img: "https://pixelplex.io/wp-content/uploads/2023/08/smart-contract-use-cases-main-1600.jpg", read: "15 menit", tags: ["Fiqh", "Smart Contract"], href: "#" },
+  ],
+  tech: [
+    { title: "Mekanisme Liquid Staking: Potensi Riba & Solusinya", kicker: "Teknologi & Protokol", img: "https://cdn.prod.website-files.com/67cafd5252963054f086f1fd/67cafd5352963054f086f575_Liquid_Staking.jpg", read: "11 menit", tags: ["Staking", "Riba"], href: "#" },
+    { title: "Struktur Token RWA (Real World Asset) yang Sesuai Syariah", kicker: "Teknologi & Protokol", img: "https://blog.digitalexchange.id/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-22-at-09.56.42_b2e38694-980x560.jpg", read: "14 menit", tags: ["RWA", "Akad"], href: "#" },
+  ],
+  market: [
+     { title: "Studi Kasus: Screening Saham Syariah vs Screening Token Kripto", kicker: "Studi Kasus Pasar", img: "https://academy-public.coinmarketcap.com/optimized-uploads/5b1f39cbcc8644a9bec3ab74cdadceda.png", read: "10 menit", tags: ["Screening", "Metodologi"], href: "#" },
+     { title: "Analisis Risiko Gharar pada Protokol DeFi Otomatis", kicker: "Studi Kasus Pasar", img: "https://www.debutinfotech.com/_next/image?url=https%3A%2F%2Fblogs.debutinfotech.com%2Fwp-content%2Fuploads%2F2024%2F08%2FTop-DeFi-Protocols.jpg&w=1920&q=85", read: "13 menit", tags: ["DeFi", "Gharar"], href: "#" },
+  ]
+};
+
 /* ---------- Discord Data ---------- */
 const DISCORD_CHANNELS = [
   { title: "Signal Coin (Spot Only)", kicker: "Signal", img: "https://th.bing.com/th/id/OIG4.eS1qx1oyXZaXIfjQeGPX?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "Realtime", tags: ["No Margin", "Risk Note"], href: "#join" },
@@ -69,7 +85,7 @@ const DISCORD_CHANNELS = [
 
 /* ---------- Consultant Data ---------- */
 const SERVICES = [
-  { title: "Verifikasi Project (Sharia Review)", kicker: "Layanan", img: "https://th.bing.com/th/id/OIG2.53.9WANjt0JUxXkcKMNo?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "3-7 hari", tags: ["Akad", "Tokenomics"], href: "#request" },
+  { title: "Project Verification(Sharia Review)", kicker: "Layanan", img: "https://th.bing.com/th/id/OIG2.53.9WANjt0JUxXkcKMNo?w=1792&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3", read: "3-7 hari", tags: ["Akad", "Tokenomics"], href: "#request" },
   { title: "Sharia Compliance Audit", kicker: "Audit", img: "https://th.bing.com/th/id/OIG2.YWEPhUULwt416CbXTqSz?pid=ImgGn", read: "7-14 hari", tags: ["Dokumen", "Rekomendasi"], href: "#request" },
   { title: "Advisor Crypto & Blockchain", kicker: "Advisory", img: "https://th.bing.com/th/id/OIG2.99dlkpEzZSI9Sz0Avt3X?pid=ImgGn", read: "Retainer", tags: ["Strategy", "Governance"], href: "#request" },
 ];
@@ -140,12 +156,11 @@ if (page === "index.html" || page === "") {
   }
   function autoplay() { clearInterval(timer); timer = setInterval(() => updateSlide(1), 5200); }
   renderSlides();
-  // Swipe handling untuk carousel
-
+  
   const slidesEl2 = document.getElementById("slides");
   if (slidesEl2) {
     slidesEl2.addEventListener("pointerdown", (e) => {
-      if (window.matchMedia("(min-width: 901px)").matches) { // hanya desktop
+      if (window.matchMedia("(min-width: 901px)").matches) {
         isDown = true;
         startX = e.clientX;
       }
@@ -186,7 +201,6 @@ if (page === "index.html" || page === "") {
   renderCardsInto(document.getElementById("trending"), trending);
   autoplay();
 
-  // Search on home
   document.getElementById("q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
     const data = q
@@ -195,7 +209,6 @@ if (page === "index.html" || page === "") {
     renderCardsInto(document.getElementById("trending"), data);
   });
 
-  // Arrow key control
   document.getElementById("carousel")?.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") document.getElementById("prev")?.click();
     if (e.key === "ArrowRight") document.getElementById("next")?.click();
@@ -216,6 +229,20 @@ if (page === "education.html") {
   });
 }
 
+if (page === "research.html") {
+  renderCardsInto(document.getElementById("res-fatwa"), RESEARCH_DATA.fatwa);
+  renderCardsInto(document.getElementById("res-tech"), RESEARCH_DATA.tech);
+  renderCardsInto(document.getElementById("res-market"), RESEARCH_DATA.market);
+
+  document.getElementById("res-q")?.addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
+    renderCardsInto(document.getElementById("res-fatwa"), q ? filter(RESEARCH_DATA.fatwa) : RESEARCH_DATA.fatwa);
+    renderCardsInto(document.getElementById("res-tech"), q ? filter(RESEARCH_DATA.tech) : RESEARCH_DATA.tech);
+    renderCardsInto(document.getElementById("res-market"), q ? filter(RESEARCH_DATA.market) : RESEARCH_DATA.market);
+  });
+}
+
 if (page === "discord.html") {
   renderCardsInto(document.getElementById("disc-channels"), DISCORD_CHANNELS);
   document.getElementById("disc-q")?.addEventListener("input", (e) => {
@@ -230,7 +257,6 @@ if (page === "discord.html") {
 if (page === "consultant.html") {
   renderCardsInto(document.getElementById("svc-list"), SERVICES);
 
-  // Dummy submit (tanpa backend, hanya feedback UI)
   document.getElementById("consult-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const status = document.getElementById("consult-status");
@@ -251,7 +277,6 @@ if (page === "webinar.html") {
   });
 }
 
-// Bottom nav: set active & aria-current berdasarkan halaman
 (function () {
   const file = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   document.querySelectorAll(".bottom-nav .tab").forEach(a => {
@@ -260,14 +285,11 @@ if (page === "webinar.html") {
     a.setAttribute("aria-current", isActive ? "page" : "false");
   });
 
-  // iOS safe-area inset fallback: jika env() tidak didukung
   const supportsEnv = CSS && CSS.supports && CSS.supports('padding-bottom: env(safe-area-inset-bottom)');
   if (!supportsEnv) {
     document.documentElement.style.setProperty('--safe-bottom', '0px');
   }
-
-  // Hindari double-scroll saat keyboard muncul di mobile
-  // (opsional) kecilkan padding saat input fokus
+  
   const inputs = document.querySelectorAll('input, textarea');
   inputs.forEach(el => {
     el.addEventListener('focus', () => document.body.classList.add('kb-open'));
@@ -275,7 +297,6 @@ if (page === "webinar.html") {
   });
 })();
 
-// Back-to-top visibility + action
 (function () {
   const btn = document.getElementById('toTop');
   if (!btn) return;

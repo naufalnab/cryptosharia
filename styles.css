@@ -54,7 +54,15 @@ header {
 .search input { all: unset; flex: 1; color: var(--text); }
 
 /* Menu */
-.menu { display: flex; gap: 0.6rem; align-items: center; padding: .5rem .75rem; }
+.menu {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding: 0.5rem 4vw;
+  justify-content: flex-end;
+}
 .menu a {
   padding: 0.45rem 0.7rem; border-radius: 10px; color: var(--muted);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -191,7 +199,7 @@ header {
   position: fixed;
   bottom: 0;
   left: 0; right: 0;
-  display: none; /* default hidden, show on mobile */
+  display: none;
   gap: .25rem;
   background: rgba(11, 15, 20, 0.85);
   backdrop-filter: saturate(140%) blur(10px);
@@ -221,11 +229,12 @@ header {
   color: #0b141c;
 }
 
-/* Tampilkan di mobile, sembunyikan di >= 900px */
 @media (max-width: 900px) {
-  .bottom-nav { display: grid; grid-template-columns: repeat(5, 1fr); }
-  /* beri ruang agar konten tidak ketutup nav bawah */
-  body { padding-bottom: 76px; } /* kira-kira tinggi nav */
+  .bottom-nav { 
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr); /* UPDATED from 5 to 6 */
+  }
+  body { padding-bottom: 76px; }
 }
 @media (min-width: 901px) {
   .bottom-nav { display: none; }
@@ -236,28 +245,22 @@ html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
 img, svg, video, canvas { max-width: 100%; height: auto; }
 
-/* Container full-bleed aman tanpa overflow */
 .container { width: min(1200px, 100%); margin-inline: auto; padding-inline: 4vw; }
 
-/* Search bar tidak melebihi layar */
 .search { width: min(360px, 100%); }
 
-/* Grid benar-benar 1 kolom di mobile, tidak pakai 12-col layout */
 @media (max-width: 680px) {
   .grid { grid-template-columns: 1fr; }
   .card { grid-column: auto; }
 }
 
-/* Carousel tidak memicu horizontal pan di mobile */
 .carousel { touch-action: pan-y; }
 
-/* Judul/kicker panjang tidak dorong layout melebar */
 .card h4, .kicker, .badge, .tag { overflow-wrap: anywhere; }
 
-/* Bottom nav tetap rapih dan tidak melebar */
 @media (max-width: 900px) {
   .bottom-nav { width: 100%; left: 0; right: 0; }
-  body { padding-bottom: 76px; } /* ruang untuk bottom nav */
+  body { padding-bottom: 76px; }
 }
 
 @media (max-width: 900px) {
@@ -280,7 +283,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   padding: 1rem 0.75rem;
 }
 
-/* Brand row */
 .f-brand {
   display: grid;
   grid-template-columns: 44px 1fr;
@@ -291,7 +293,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .f-brand .title { font-weight: 800; }
 .f-brand .muted { margin: .15rem 0 0; font-size: .9rem; color: var(--muted); }
 
-/* Links: 2 kolom di mobile, ikon jempol-friendly */
 .f-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -308,7 +309,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .f-links a:active { transform: scale(.98); }
 .f-links a:hover { background: rgba(255,255,255,.05); }
 
-/* Social: baris tombol besar */
 .f-social {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -326,7 +326,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 .f-social svg { opacity: .9; }
 .f-social span { font-size: .95rem; }
 
-/* Mini bar */
 .footer-mini {
   display: flex; align-items: center; justify-content: space-between;
   gap: .75rem;
@@ -343,7 +342,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   cursor: pointer; color: var(--muted);
 }
 
-/* To top button */
 .to-top {
   position: fixed; right: 14px; bottom: calc(80px + env(safe-area-inset-bottom));
   width: 42px; height: 42px; border-radius: 12px;
@@ -358,24 +356,21 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
 }
 .to-top.show { opacity: 1; pointer-events: auto; }
 
-/* ===== Tablet / Desktop tweaks ===== */
 @media (min-width: 680px) {
   .footer-wrap {
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: start;
     padding: 1.2rem 0;
   }
-  .f-links { grid-template-columns: 1fr; }
-  .f-social { grid-template-columns: 1fr; }
 }
+
 @media (min-width: 980px) {
   .footer-mini { padding-left: 0; padding-right: 0; }
 }
-/* ===== Desktop Footer Refresh ===== */
+
 @media (min-width: 980px) {
   .site-footer { margin-top: 2rem; }
 
-  /* Dua kolom: brand kiri, social kanan */
   .footer-wrap {
     grid-template-columns: 1.2fr 1fr;
     gap: 1.5rem 3rem;
@@ -383,7 +378,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
     padding: 1.6rem 0;
   }
 
-  /* Brand lebih tegas */
   .f-brand {
     grid-template-columns: 56px 1fr;
     gap: .8rem;
@@ -396,7 +390,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   .f-brand .title { font-size: 1.25rem; }
   .f-brand .muted { font-size: .95rem; max-width: 48ch; }
 
-  /* Social jadi bar tombol kompak kanan */
   .f-social {
     display: flex;
     justify-content: flex-end;
@@ -421,7 +414,6 @@ img, svg, video, canvas { max-width: 100%; height: auto; }
   .f-social svg { width: 20px; height: 20px; opacity: .95; }
   .f-social span { font-size: .95rem; }
 
-  /* Footer mini diratakan ke lebar container */
   .footer-mini {
     width: min(1200px, 100%);
     margin-inline: auto;
