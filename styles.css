@@ -431,3 +431,23 @@ input:checked + .slider:before { transform: translateX(20px); }
   color: var(--muted); font-size: 0.85rem; line-height: 1.5;
 }
 .version-footer p { margin: 0; }
+
+/* ===== Advertisement Banner ===== */
+.ad-banner-container {
+  margin: 1.6rem 0;
+  text-align: center;
+}
+
+.ad-banner-container a {
+  display: inline-block;
+  max-width: 970px; /* Ukuran max banner billboard */
+}
+
+.ad-banner-container img {
+  display: block; /* Menghilangkan spasi bawah gambar */
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
