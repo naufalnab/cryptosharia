@@ -46,7 +46,7 @@ const trending = [
 /* ---------- Education Data ---------- */
 const EDU = {
   sharia: [
-    { title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah", kicker: "Sharia", img: "https://media.canva.com/v2/image-resize/format:PNG/height:309/quality:100/uri:ifs%3A%2F%2FM%2F466ee22c-e7c7-4eb0-aa65-d3cb52b3b00c/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAJEvSeu6GJ9J2ze-I8Qj-Oc-FNdJRh7ujpvhuQh0YD44&exp=1757841066&osig=AAAAAAAAAAAAAAAAAAAAAHdxskIQsAQfee1riNNheHPVRxlkZ5ZUeL6noVN_Pvvu&signer=media-rpc&x-canva-quality=thumbnail_large", read: "9 menit", tags: ["Akad", "Muamalah"], href: "#" },
+    { title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah", kicker: "Sharia", img: "https://media.canva.com/v2/image-resize/format:PNG/height:309/quality:100/uri:ifs%3A%2F%2FM%2F466ee22c-e7c7-4eb0-aa65-d3cb52b3b00c/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAI6YZDAeIX2jlMSh91EbIcN56o5L7MJPPsZdBWYLL356&exp=1758118266&osig=AAAAAAAAAAAAAAAAAAAAAAoiLNmGNxjx3-nNXLWly9jE2wbyw-ZY9vI9IDWi1t2W&signer=media-rpc&x-canva-quality=thumbnail_large", read: "9 menit", tags: ["Akad", "Muamalah"], href: "#" },
     { title: "Riba & Gharar: Cara Audit Tokenomics", kicker: "Sharia", img: "https://ischain.id/wp-content/uploads/2022/11/ANTARA-RIBA-GHARAR-1.jpg", read: "7 menit", tags: ["Riba", "Gharar"], href: "#" },
   ],
   blockchain: [
@@ -307,4 +307,42 @@ if (page === "webinar.html") {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* ===== Theme Toggle Functionality ===== */
+(function () {
+  const toggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const storageKey = 'theme-preference';
+
+  // Fungsi untuk menerapkan tema berdasarkan input ('light' atau 'dark')
+  const applyTheme = (theme) => {
+    // Menambahkan/menghapus class 'light-mode' pada body
+    body.classList.toggle('light-mode', theme === 'light');
+    
+    // Sinkronisasi status checkbox dengan tema yang aktif
+    if (toggle) {
+      // 'checked' berarti toggle "On", yang kita set sebagai dark mode
+      toggle.checked = theme === 'dark';
+    }
+  };
+
+  // Baca preferensi tema dari localStorage saat halaman dimuat
+  const savedTheme = localStorage.getItem(storageKey);
+
+  // Tambahkan event listener jika toggle ada di halaman ini
+  if (toggle) {
+    toggle.addEventListener('change', () => {
+      // Jika dicentang (checked), tema baru adalah 'dark'. Jika tidak, 'light'.
+      const newTheme = toggle.checked ? 'dark' : 'light';
+      // Simpan preferensi baru ke localStorage
+      localStorage.setItem(storageKey, newTheme);
+      // Terapkan tema baru
+      applyTheme(newTheme);
+    });
+  }
+
+  // Terapkan tema yang tersimpan saat pertama kali membuka halaman
+  // Jika tidak ada preferensi, gunakan 'dark' sebagai default
+  applyTheme(savedTheme || 'dark');
 })();
