@@ -346,18 +346,222 @@ const trending = [
 /* ---------- Education Data ---------- */
 const EDU = {
   sharia: [
-    { title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah", kicker: "Sharia", img: "https://media.canva.com/v2/image-resize/format:PNG/height:309/quality:100/uri:ifs%3A%2F%2FM%2F466ee22c-e7c7-4eb0-aa65-d3cb52b3b00c/watermark:F/width:550?csig=AAAAAAAAAAAAAAAAAAAAAI6YZDAeIX2jlMSh91EbIcN56o5L7MJPPsZdBWYLL356&exp=1758118266&osig=AAAAAAAAAAAAAAAAAAAAAAoiLNmGNxjx3-nNXLWly9jE2wbyw-ZY9vI9IDWi1t2W&signer=media-rpc&x-canva-quality=thumbnail_large", read: "9 menit", tags: ["Akad", "Muamalah"], href: "#" },
-    { title: "Riba & Gharar: Cara Audit Tokenomics", kicker: "Sharia", img: "https://ischain.id/wp-content/uploads/2022/11/ANTARA-RIBA-GHARAR-1.jpg", read: "7 menit", tags: ["Riba", "Gharar"], href: "#" },
+    { 
+      id: "akad-aset-digital",
+      title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah",
+      kicker: "Sharia",
+      img: "https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/558052174_32335996639324662_473767438286461861_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeETu-GlPQxVgv4ogk4FjwNSJ46b7fbpmd0njpvt9umZ3SK0XaqLb8GsyASVeS9Ek17NMPTFQbLqZ7Hg0IISLT9f&_nc_ohc=tTyoeU9CzKMQ7kNvwHKhUOS&_nc_oc=AdkAEHchZFQtz3iLXRoMjFKpjZ4oD_DDs0kg5zI2QXtb3aXmAkGHAJ5cizkE-sAucyE&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=dkQYP3ynA_qIG1mb3dIxXg&oh=00_AfeVob97zgUzE6dhhiK3L3FfhpM6RsY9BjSWXXIYovJr_A&oe=68E7CA42",
+      read: "9 menit",
+      tags: ["Akad", "Muamalah"],
+      href: "#",
+      content: `
+        <p>Aset digital seperti crypto, token, dan NFT tidak bisa lepas dari perbincangan akad dalam perspektif fiqh muamalah. Untuk memahami status hukumnya, kita perlu meninjau jenis akad yang paling sering terjadi di ekosistem ini: <strong>Bai'</strong> (jual beli), <strong>Ijarah</strong> (sewa manfaat), dan <strong>Syirkah</strong> (kerjasama modal).</p>
+
+        <h3>1. Bai' (Jual Beli) dalam Transaksi Crypto</h3>
+        <p>Bai' adalah akad pertukaran antara dua barang yang memiliki nilai. Dalam crypto, transaksi spot termasuk akad jual beli apabila terjadi serah terima (qabdh) secara hukmi, yaitu aset berpindah ke wallet pengguna setelah transaksi selesai.</p>
+        <ul>
+          <li>✅ Syarat sah: Ada barang (crypto), harga, dan ijab-qabul</li>
+          <li>❌ Tidak boleh ada penundaan serah terima seperti pada margin trading</li>
+        </ul>
+
+        <h3>2. Ijarah (Sewa Manfaat) dalam Ekosistem Blockchain</h3>
+        <p>Konsep ijarah muncul pada layanan staking, cloud mining, atau penggunaan node. Selama manfaat yang disewa jelas dan tidak mengandung gharar, akad ini bisa diterapkan.</p>
+        <p>Namun, perlu diperhatikan sumber imbalan. Jika reward berasal dari inflasi token yang tidak memiliki underlying asset, maka perlu kehati-hatian.</p>
+
+        <h3>3. Syirkah (Kemitraan) dalam Proyek DeFi</h3>
+        <p>Syirkah berlaku saat ada dua pihak atau lebih yang menggabungkan modal untuk mendapatkan keuntungan bersama. Liquidity pool (LP) bisa dianalogikan sebagai syirkah, selama tidak ada bunga dan pembagian keuntungan proporsional berdasarkan kontribusi.</p>
+
+        <h3>Kesimpulan</h3>
+        <p>Setiap akad dalam aset digital harus memenuhi prinsip keadilan, kejelasan, dan kerelaan. Dengan memahami akad-akad dasar ini, investor Muslim dapat menavigasi dunia crypto tanpa meninggalkan nilai-nilai syariah.</p>
+
+        <p class="muted"><em>Catatan: Artikel ini bersifat edukatif dan bukan fatwa. Untuk keputusan hukum, konsultasikan dengan ulama yang kompeten dalam fiqh muamalah kontemporer.</em></p>
+      `
+    },
+    { 
+      id: "riba-gharar-tokenomics",
+      title: "Riba & Gharar: Cara Audit Tokenomics",
+      kicker: "Sharia",
+      img: "https://ischain.id/wp-content/uploads/2022/11/ANTARA-RIBA-GHARAR-1.jpg",
+      read: "7 menit",
+      tags: ["Riba", "Gharar"],
+      href: "#",
+      content: `
+        <p>Tokenomics adalah jantung dari setiap proyek crypto. Namun, di balik kompleksitasnya sering tersembunyi unsur <strong>riba</strong> dan <strong>gharar</strong> yang bertentangan dengan prinsip syariah. Artikel ini membahas cara mengaudit tokenomics secara sederhana tapi efektif.</p>
+
+        <h3>1. Deteksi Unsur Riba</h3>
+        <p>Riba muncul ketika terjadi tambahan nilai tanpa aktivitas ekonomi yang sah. Dalam tokenomics, riba bisa muncul dalam bentuk:</p>
+        <ul>
+          <li>💸 <strong>Yield tetap</strong> tanpa risiko — mirip bunga deposito.</li>
+          <li>📈 <strong>Interest-bearing lending</strong> dalam DeFi lending pool.</li>
+          <li>📉 <strong>Margin trading</strong> dengan leverage, yang menggunakan dana pinjaman berbunga.</li>
+        </ul>
+        <p><em>Audit sederhana:</em> Pastikan reward tidak bersifat tetap dan berasal dari aktivitas produktif (seperti biaya transaksi).</p>
+
+        <h3>2. Identifikasi Unsur Gharar</h3>
+        <p>Gharar adalah ketidakpastian berlebihan yang menimbulkan spekulasi. Contohnya:</p>
+        <ul>
+          <li>❓ Tokenomics tidak menjelaskan fungsi token dengan jelas</li>
+          <li>🪙 Supply dan burn mechanism yang tidak transparan</li>
+          <li>👥 Tim anonim tanpa tanggung jawab</li>
+        </ul>
+        <p>Dalam syariah, gharar berlebihan dapat membuat akad menjadi fasid (rusak).</p>
+
+        <h3>3. Langkah Audit Tokenomics</h3>
+        <ol>
+          <li>🔍 Periksa whitepaper dan distribusi token (apakah adil dan transparan)</li>
+          <li>🧾 Pastikan tidak ada bunga atau jaminan profit tetap</li>
+          <li>🧠 Cek logika supply-demand dan utility token</li>
+          <li>🧱 Pastikan ada underlying project atau manfaat nyata</li>
+        </ol>
+
+        <h3>Kesimpulan</h3>
+        <p>Menghindari riba dan gharar adalah fondasi utama dalam investasi syariah. Dengan audit sederhana, umat Muslim dapat berpartisipasi dalam inovasi blockchain tanpa mengorbankan prinsip agama.</p>
+
+        <p class="muted"><em>Tips: Gunakan checklist syariah sebelum membeli token baru. Jika terlalu rumit atau tidak jelas sumber profitnya — tinggalkan.</em></p>
+      `
+    },
   ],
+
   blockchain: [
-    { title: "Cara Kerja Konsensus: PoW vs PoS (Non-Riba)", kicker: "Blockchain", img: "https://i0.wp.com/zenledger.io/wp-content/uploads/2023/03/61b6f0f7644b7e1eec43423e_Proof-Of-Stake-Vs-Proof-Of-Work.jpg?w=1200&ssl=1", read: "8 menit", tags: ["Consensus", "Security"], href: "#" },
-    { title: "Layer-2 101: Rollup, Validium, & Biaya", kicker: "Blockchain", img: "https://blog.sagipl.com/wp-content/uploads/2024/10/L-2-Ethereum-Network.jpg", read: "6 menit", tags: ["L2", "Scalability"], href: "#" },
+    { 
+      id: "konsensus-pow-pos",
+      title: "Cara Kerja Konsensus: PoW vs PoS (Non-Riba)",
+      kicker: "Blockchain",
+      img: "https://i0.wp.com/zenledger.io/wp-content/uploads/2023/03/61b6f0f7644b7e1eec43423e_Proof-Of-Stake-Vs-Proof-Of-Work.jpg?w=1200&ssl=1",
+      read: "8 menit",
+      tags: ["Consensus", "Security"],
+      href: "#",
+      content: `
+        <p>Salah satu aspek penting dalam blockchain adalah mekanisme konsensus. Dua sistem yang paling populer adalah <strong>Proof of Work (PoW)</strong> dan <strong>Proof of Stake (PoS)</strong>. Bagaimana keduanya dapat dipandang dari kacamata syariah?</p>
+
+        <h3>1. Proof of Work (PoW)</h3>
+        <p>PoW mengandalkan daya komputasi untuk memvalidasi transaksi dan menghasilkan blok baru. Para penambang (miner) bersaing memecahkan teka-teki kriptografi untuk mendapat reward.</p>
+        <ul>
+          <li>✅ Imbalan berdasarkan kerja nyata (usaha dan energi)</li>
+          <li>❌ Boros energi, sehingga kurang efisien</li>
+        </ul>
+        <p>Secara fiqh, PoW mendekati akad <strong>ju’alah</strong> — yaitu imbalan untuk pekerjaan tertentu.</p>
+
+        <h3>2. Proof of Stake (PoS)</h3>
+        <p>PoS memilih validator berdasarkan jumlah token yang mereka stake. Reward diberikan kepada validator terpilih yang menjaga keamanan jaringan.</p>
+        <ul>
+          <li>✅ Lebih hemat energi</li>
+          <li>❌ Potensi gharar jika reward tidak transparan atau berasal dari inflasi</li>
+        </ul>
+
+        <h3>3. Perspektif Syariah</h3>
+        <p>Kedua mekanisme ini bisa diterima secara prinsip selama tidak melibatkan:</p>
+        <ul>
+          <li>❌ Lending berbunga</li>
+          <li>❌ Manipulasi reward atau spekulasi</li>
+        </ul>
+        <p>Selama reward berasal dari aktivitas validasi transaksi (bukan pinjaman), maka PoW dan PoS dapat dikategorikan sebagai <strong>usaha produktif</strong> yang halal.</p>
+
+        <h3>Kesimpulan</h3>
+        <p>PoW dan PoS sama-sama memiliki dasar yang bisa diterima dalam ekonomi syariah, asalkan mekanisme reward dan kepemilikan asetnya jelas. Prinsip utamanya: “<em>La riba, la gharar, la zulm</em>” — tanpa riba, tanpa ketidakjelasan, tanpa kezaliman.</p>
+      `
+    },
+    { 
+      id: "layer2-rollup-validium",
+      title: "Layer-2 101: Rollup, Validium, & Biaya",
+      kicker: "Blockchain",
+      img: "https://blog.sagipl.com/wp-content/uploads/2024/10/L-2-Ethereum-Network.jpg",
+      read: "6 menit",
+      tags: ["L2", "Scalability"],
+      href: "#",
+      content: `
+        <p>Layer-2 (L2) adalah solusi untuk meningkatkan skalabilitas blockchain tanpa mengorbankan keamanan. Dua jenis utama L2 adalah <strong>Rollup</strong> dan <strong>Validium</strong>. Mari kita pahami secara sederhana.</p>
+
+        <h3>1. Rollup</h3>
+        <p>Rollup menggabungkan banyak transaksi menjadi satu, lalu mengirim bukti hasilnya ke Layer-1. Ada dua tipe utama:</p>
+        <ul>
+          <li><strong>Optimistic Rollup:</strong> Mengasumsikan transaksi valid kecuali dibuktikan sebaliknya.</li>
+          <li><strong>ZK Rollup:</strong> Menggunakan bukti kriptografi (zero-knowledge proof) untuk validasi cepat.</li>
+        </ul>
+        <p>Keunggulan: Biaya rendah, keamanan tetap tinggi.</p>
+
+        <h3>2. Validium</h3>
+        <p>Validium menyimpan data transaksi di luar blockchain (off-chain), tapi tetap menggunakan bukti ZK untuk validasi.</p>
+        <ul>
+          <li>⚡ Lebih cepat dan murah</li>
+          <li>⚠️ Risiko: Ketergantungan pada operator penyimpan data</li>
+        </ul>
+
+        <h3>3. Perspektif Syariah</h3>
+        <p>L2 tidak memunculkan akad baru, namun penting untuk memastikan tidak ada unsur <strong>gharar</strong> dalam pengelolaan data dan fee. Transparansi tetap wajib dijaga.</p>
+
+        <h3>Kesimpulan</h3>
+        <p>Rollup dan Validium adalah inovasi yang memperluas akses ke blockchain dengan biaya lebih murah. Prinsip syariah menuntut transparansi dan keadilan, bukan sekadar efisiensi teknis.</p>
+      `
+    },
   ],
+
   crypto: [
-    { title: "Spot-Only Strategy untuk Pemula", kicker: "Crypto", img: "https://academy-public.coinmarketcap.com/optimized-uploads/9f8083bc994a46b5a18dc6f1464b03fb.png", read: "6 menit", tags: ["Spot", "Manajemen Risiko"], href: "#" },
-    { title: "Staking & Delegasi: Analogi Ijarah", kicker: "Crypto", img: "https://cdn.prod.website-files.com/624b08d53d7ac65cf7c11d91/67aa7ae20e2601bd622d3586_Crypto%20Staking%20Explained_%20How%20It%20Works%2C%20Types%2C%20Benefits%20%26%20Risks%202.jpg", read: "7 menit", tags: ["Staking", "Validator"], href: "#" },
+    { 
+      id: "spot-only-pemula",
+      title: "Spot-Only Strategy untuk Pemula",
+      kicker: "Crypto",
+      img: "https://academy-public.coinmarketcap.com/optimized-uploads/9f8083bc994a46b5a18dc6f1464b03fb.png",
+      read: "6 menit",
+      tags: ["Spot", "Manajemen Risiko"],
+      href: "#",
+      content: `
+        <p>Bagi Muslim yang baru terjun ke dunia crypto, strategi paling aman dan sesuai syariah adalah <strong>spot-only trading</strong>. Apa artinya dan bagaimana penerapannya?</p>
+
+        <h3>1. Apa Itu Spot Trading?</h3>
+        <p>Spot trading adalah jual beli aset digital secara langsung tanpa pinjaman (leverage). Setelah transaksi, aset berpindah ke wallet pembeli — memenuhi syarat <strong>qabdh hukmi</strong>.</p>
+
+        <h3>2. Mengapa Spot Dibenarkan?</h3>
+        <p>Dalam fiqh, spot trading termasuk akad jual beli sah karena:</p>
+        <ul>
+          <li>Tidak ada riba (tanpa bunga)</li>
+          <li>Tidak ada gharar besar (transparan dan serah terima langsung)</li>
+          <li>Tidak ada spekulasi berlebihan</li>
+        </ul>
+
+        <h3>3. Tips Praktis</h3>
+        <ol>
+          <li>Gunakan exchange yang tidak menyediakan margin/lending</li>
+          <li>Pahami aset yang dibeli (utility, tim, proyek)</li>
+          <li>Gunakan manajemen risiko: maksimal 10% modal per aset</li>
+        </ol>
+
+        <h3>Kesimpulan</h3>
+        <p>Spot-only adalah jalan tengah antara partisipasi dalam inovasi dan menjaga prinsip syariah. Fokuslah pada pemahaman, bukan sekadar profit cepat.</p>
+      `
+    },
+    { 
+      id: "staking-ijarah-analogi",
+      title: "Staking & Delegasi: Analogi Ijarah",
+      kicker: "Crypto",
+      img: "https://cdn.prod.website-files.com/624b08d53d7ac65cf7c11d91/67aa7ae20e2601bd622d3586_Crypto%20Staking%20Explained_%20How%20It%20Works%2C%20Types%2C%20Benefits%20%26%20Risks%202.jpg",
+      read: "7 menit",
+      tags: ["Staking", "Validator"],
+      href: "#",
+      content: `
+        <p>Staking sering dibandingkan dengan akad <strong>ijarah</strong> (sewa manfaat). Namun, apakah perbandingan ini valid secara fiqh?</p>
+
+        <h3>1. Mekanisme Staking</h3>
+        <p>Staking berarti mengunci token untuk membantu memvalidasi transaksi di jaringan PoS. Sebagai imbalan, pengguna mendapat reward.</p>
+
+        <h3>2. Analogi Ijarah</h3>
+        <ul>
+          <li><strong>Aset:</strong> Token yang disewakan</li>
+          <li><strong>Manfaat:</strong> Keamanan jaringan</li>
+          <li><strong>Imbalan:</strong> Staking reward</li>
+        </ul>
+        <p>Namun, ijarah mensyaratkan ujrah yang pasti dan manfaat terukur. Sedangkan reward staking bersifat probabilistik.</p>
+
+        <h3>3. Pendekatan Alternatif</h3>
+        <p>Beberapa ulama memandang staking lebih mirip akad <strong>ju’alah</strong>, yaitu pemberian hadiah atas jasa yang berhasil dilakukan.</p>
+
+        <h3>Kesimpulan</h3>
+        <p>Staking bisa diterima secara syariah jika reward berasal dari biaya transaksi, bukan dari inflasi token atau bunga. Prinsip utamanya: hindari gharar dan riba, serta pahami mekanisme teknologinya.</p>
+      `
+    },
   ],
 };
+
 
 /* ---------- Research Data ---------- */
 const RESEARCH_DATA = {
