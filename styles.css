@@ -181,14 +181,7 @@ body.light-mode .menu a:hover {
 .grid {
   display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem;
 }
-.card {
-  grid-column: span 12; background: var(--elev);
-  border: 1px solid var(--border-color);
-  border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
-  box-shadow: var(--shadow);
-}
-.card img { width: 100%; height: 180px; object-fit: cover; }
-.card .body { padding: .9rem; }
+
 .kicker { font-size: .78rem; color: var(--accent); letter-spacing: .2px; }
 .card h4 { margin: .35rem 0 .4rem; font-size: 1.05rem; line-height: 1.35; }
 .tag {
@@ -444,10 +437,69 @@ input:checked + .slider:before { transform: translateX(20px); }
 }
 
 .ad-banner-container img {
-  display: block; /* Menghilangkan spasi bawah gambar */
-  max-width: 100%;
+  display: block;
+  max-width: 50%;
   height: auto;
+  margin-inline: auto; /* Tambahkan baris ini */
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
+}
+
+.breaking-news .breaking-card {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background: var(--elev);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+
+  /* biar bisa scroll horizontal */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.breaking-news .breaking-card img {
+  width: 45%;
+  min-width: 180px; /* jangan sampai ilang */
+  object-fit: cover;
+}
+
+.breaking-news .breaking-card .body {
+  flex: 1;
+  min-width: 200px; /* pastikan teks punya ruang */
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsif mengecil */
+@media (max-width: 700px) {
+  .breaking-news .breaking-card img {
+    width: 40%;
+  }
+  .breaking-news .breaking-card .body {
+    padding: 0.8rem;
+  }
+  .breaking-news .breaking-card h4 {
+    font-size: 1rem;
+  }
+  .breaking-news .breaking-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .breaking-news .breaking-card img {
+    width: 35%;
+  }
+  .breaking-news .breaking-card h4 {
+    font-size: 0.9rem;
+  }
+  .breaking-news .breaking-card p {
+    font-size: 0.8rem;
+  }
 }
