@@ -350,7 +350,7 @@ const EDU = {
       id: "akad-aset-digital",
       title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah",
       kicker: "Sharia",
-      img: "https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/558052174_32335996639324662_473767438286461861_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeETu-GlPQxVgv4ogk4FjwNSJ46b7fbpmd0njpvt9umZ3SK0XaqLb8GsyASVeS9Ek17NMPTFQbLqZ7Hg0IISLT9f&_nc_ohc=tTyoeU9CzKMQ7kNvwHKhUOS&_nc_oc=AdkAEHchZFQtz3iLXRoMjFKpjZ4oD_DDs0kg5zI2QXtb3aXmAkGHAJ5cizkE-sAucyE&_nc_zt=23&_nc_ht=scontent.fsub8-1.fna&_nc_gid=dkQYP3ynA_qIG1mb3dIxXg&oh=00_AfeVob97zgUzE6dhhiK3L3FfhpM6RsY9BjSWXXIYovJr_A&oe=68E7CA42",
+      img: "https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/558090107_32336097412647918_5154194062032096093_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHymmNrySmOGPZAln4DMEqiOhr4cFAVDKs6GvhwUBUMq1iyHnF90Qz1_UU9pyLW_NDShfotUTDMQoAwBtfJiO9p&_nc_ohc=peVmaKHHsX0Q7kNvwGngtxN&_nc_oc=AdlNbMDz4Nx1fW8eMETugH5_3h8nNKnT6ibUR-_Itgp5Lk7-ZS3Z_PR_sVOGLNdQJDc&_nc_zt=23&_nc_ht=scontent.fsub8-2.fna&_nc_gid=b5kIZamxrUpkkqjFqiGjzQ&oh=00_AfdW2tDRaJ2IYvyVLKreaJXeWG8MfCBsynoIbU--5DcZ2A&oe=68E7CA1F",
       read: "9 menit",
       tags: ["Akad", "Muamalah"],
       href: "#",
