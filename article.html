@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Artikel - CryptoSharia News</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <nav class="menu" aria-label="Primary">
-      <a href="index.html" data-page="index.html">News</a>
-      <a href="education.html" data-page="education.html">Education</a>
-      <a href="research.html" data-page="research.html">Research</a>
-      <a href="discord.html" data-page="discord.html">Discord Premium</a>
-      <a href="consultant.html" data-page="consultant.html">Consultant Crypto Sharia</a>
-      <a href="webinar.html" data-page="webinar.html">Webinar</a>
-      <a href="profile.html" data-page="profile.html">Profile</a>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artikel - CryptoSharia News</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html" data-page="index.html">News</a>
+        <a href="education.html" data-page="education.html">Education</a>
+        <a href="research.html" data-page="research.html">Research</a>
+        <a href="community.html" data-page="community.html">Discord</a>
+        <a href="profile.html" data-page="profile.html">Profile</a>
+      </nav>
 
-    <div class="container nav">
-      <div class="brand">
-        <img src="Logo.png" alt="CryptoSharia Logo" class="logo" width="48" height="48" />
-        <div>
-          <div class="title">News<span style="color: var(--brand)">Crypto</span></div>
-          <div class="muted" style="font-size: 0.85rem">News crypto yang selaras syariah</div>
+      <div class="container nav">
+        <div class="brand">
+          <img
+            src="Logo.png"
+            alt="CryptoSharia Logo"
+            class="logo"
+            width="48"
+            height="48"
+          />
+          <div>
+            <div class="title">
+              News<span style="color: var(--brand)">Crypto</span>
+            </div>
+            <div class="muted" style="font-size: 0.85rem">
+              News crypto yang selaras syariah
+            </div>
+          </div>
+        </div>
+        <span class="pill" id="clock"></span>
+      </div>
+    </header>
+
+    <main class="article-container">
+      <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+
+      <article id="articleContent">
+        <div class="article-header">
+          <div class="kicker" id="articleKicker"></div>
+          <h1 id="articleTitle"></h1>
+          <div class="article-meta">
+            <span id="articleRead"></span>
+          </div>
+          <div class="article-tags" id="articleTags"></div>
+        </div>
+
+        <img id="articleImage" class="article-image" alt="" />
+
+        <div class="article-content" id="articleBody"></div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-wrap container">
+        <div class="f-brand">
+          <img
+            src="Logo.png"
+            alt="CryptoSharia Logo"
+            class="logo"
+            width="48"
+            height="48"
+          />
+          <div>
+            <div class="title">
+              Crypto<span style="color: var(--brand)">Sharia</span>
+            </div>
+            <p class="muted">News & education crypto berperspektif syariah.</p>
+          </div>
         </div>
       </div>
-      <span class="pill" id="clock"></span>
-    </div>
-  </header>
-
-  <main class="article-container">
-    <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-    
-    <article id="articleContent">
-      <div class="article-header">
-        <div class="kicker" id="articleKicker"></div>
-        <h1 id="articleTitle"></h1>
-        <div class="article-meta">
-          <span id="articleRead"></span>
-        </div>
-        <div class="article-tags" id="articleTags"></div>
+      <div class="footer-mini">
+        <div>© <span id="year"></span> CryptoSharia.news</div>
       </div>
-      
-      <img id="articleImage" class="article-image" alt="" />
-      
-      <div class="article-content" id="articleBody"></div>
-    </article>
-  </main>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="footer-wrap container">
-      <div class="f-brand">
-        <img src="Logo.png" alt="CryptoSharia Logo" class="logo" width="48" height="48" />
-        <div>
-          <div class="title">Crypto<span style="color: var(--brand)">Sharia</span></div>
-          <p class="muted">News & education crypto berperspektif syariah.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-mini">
-      <div>© <span id="year"></span> CryptoSharia.news</div>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

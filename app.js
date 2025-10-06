@@ -719,20 +719,6 @@ if (page === "index.html" || page === "") {
   });
 }
 
-if (page === "education.html") {
-  renderCardsInto(document.getElementById("edu-sharia"), EDU.sharia);
-  renderCardsInto(document.getElementById("edu-blockchain"), EDU.blockchain);
-  renderCardsInto(document.getElementById("edu-crypto"), EDU.crypto);
-
-  document.getElementById("edu-q")?.addEventListener("input", (e) => {
-    const q = e.target.value.trim().toLowerCase();
-    const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
-    renderCardsInto(document.getElementById("edu-sharia"), q ? filter(EDU.sharia) : EDU.sharia);
-    renderCardsInto(document.getElementById("edu-blockchain"), q ? filter(EDU.blockchain) : EDU.blockchain);
-    renderCardsInto(document.getElementById("edu-crypto"), q ? filter(EDU.crypto) : EDU.crypto);
-  });
-}
-
 if (page === "research.html") {
   renderCardsInto(document.getElementById("res-fatwa"), RESEARCH_DATA.fatwa);
   renderCardsInto(document.getElementById("res-tech"), RESEARCH_DATA.tech);
@@ -766,6 +752,55 @@ if (page === "consultant.html") {
     const status = document.getElementById("consult-status");
     status.textContent = "Terima kasih! Form terkirim. Kami akan menghubungi Anda via email.";
     setTimeout(() => { status.textContent = ""; e.target.reset(); }, 5000);
+  });
+}
+
+// Community Page Tab Switching
+if (page === "community.html") {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.dataset.tab;
+      
+      // Remove active class from all
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked
+      btn.classList.add('active');
+      document.getElementById(`${targetTab}-content`).classList.add('active');
+    });
+  });
+
+  // Render Discord channels
+  renderCardsInto(document.getElementById("disc-channels"), DISCORD_CHANNELS);
+  
+  // Render Services
+  renderCardsInto(document.getElementById("svc-list"), SERVICES);
+}
+
+// Education Page - sudah include webinar
+if (page === "education.html") {
+  renderCardsInto(document.getElementById("edu-sharia"), EDU.sharia);
+  renderCardsInto(document.getElementById("edu-blockchain"), EDU.blockchain);
+  renderCardsInto(document.getElementById("edu-crypto"), EDU.crypto);
+  
+  // Webinar sections
+  renderCardsInto(document.getElementById("wb-upcoming"), webinarS.upcoming);
+  renderCardsInto(document.getElementById("wb-past"), webinarS.past);
+
+  // Search functionality
+  document.getElementById("edu-q")?.addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
+    
+    renderCardsInto(document.getElementById("edu-sharia"), q ? filter(EDU.sharia) : EDU.sharia);
+    renderCardsInto(document.getElementById("edu-blockchain"), q ? filter(EDU.blockchain) : EDU.blockchain);
+    renderCardsInto(document.getElementById("edu-crypto"), q ? filter(EDU.crypto) : EDU.crypto);
+    renderCardsInto(document.getElementById("wb-upcoming"), q ? filter(webinarS.upcoming) : webinarS.upcoming);
+    renderCardsInto(document.getElementById("wb-past"), q ? filter(webinarS.past) : webinarS.past);
   });
 }
 
