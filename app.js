@@ -35,12 +35,55 @@ const breaking = [
 ];
 
 const trending = [
-  { 
+  {
+    id: "paradoks-kaca-hutan-gelap",
+    title: "Paradoks Kaca dan Hutan Gelap: Evolusi Privasi Blockchain",
+    kicker: "Laporan Khusus",
+    img: "paradoks_kaca_hutan_gelap.png",
+    read: "15 menit",
+    tags: ["Privasi", "MEV", "Zero Knowledge"],
+    content: `
+      <p><em>Laporan Khusus: Memahami Sisi Lain Transparansi Blockchain dengan Bahasa Sederhana</em></p>
+
+      <h3>Apa Itu "Paradoks Kaca"?</h3>
+      <p>Banyak orang mengira Bitcoin dan crypto itu serba rahasia. Padahal faktanya justru sebaliknya: <strong>Blockchain itu seperti rumah kaca.</strong></p>
+      <p>Bayangkan jika rekening bank Anda transparan. Siapapun—tetangga, penjual kopi, hingga penjahat—bisa melihat saldo Anda, dari mana uang Anda berasal, dan ke mana Anda mengirimnya. Itulah realitas blockchain saat ini. Transparansi ini bagus untuk mencegah korupsi, tapi buruk untuk privasi pribadi kita.</p>
+
+      <h3>Mitos: "Crypto Itu Anonim"</h3>
+      <p>Salah besar. Crypto itu <em>pseudonim</em> (punya nama samaran). Identitas Anda memang tidak tertulis sebagai "Budi" atau "Siti", tapi berupa deretan kode (misal: 0x7a2...).</p>
+      <p>Masalahnya, jika sekali saja nama samaran ini ketahuan milik Anda (misalnya saat Anda transfer dari Tokocrypto/Indodax ke dompet pribadi), maka <strong>seluruh riwayat keuangan Anda terbuka selamanya</strong>. Tidak ada tombol "hapus" di blockchain.</p>
+
+      <h3>Bahaya "Hutan Gelap" (Dark Forest)</h3>
+      <p>Di dunia Ethereum (salah satu blockchain terbesar), ada fenomena yang disebut "Hutan Gelap". Ini seperti hutan rimba yang dipenuhi predator tak terlihat.</p>
+      <p>Saat Anda kirim transaksi, transaksi itu masuk ke "ruang tunggu" (mempool) sebelum dicatat resmi. Di ruang tunggu ini, ada robot-robot canggih (bot) yang mengintai. Jika mereka melihat Anda mau beli token yang menguntungkan, mereka bisa:</p>
+      <ul>
+          <li>Menyalip antrian Anda (beli duluan).</li>
+          <li>Menaikkan harga secara otomatis.</li>
+          <li>Menjualnya kembali ke Anda dengan harga mahal.</li>
+      </ul>
+      <p>Ini disebut <strong>MEV</strong>, atau gampangnya: "uang palak digital". Anda rugi tanpa sadar.</p>
+
+      <h3>Risiko Nyata: Kejahatan Fisik</h3>
+      <p>Karena saldo Anda transparan, penjahat bisa tahu siapa "paus" (orang kaya) sebenarnya. Ini memicu risiko penculikan atau perampokan, karena mereka tahu pasti berapa harta yang Anda miliki di dompet digital Anda.</p>
+
+      <h3>Solusi Masa Depan: Teknologi "Bukti Tanpa Rahasia"</h3>
+      <p>Untungnya, para ahli sedang mengembangkan solusi bernama <strong>Zero-Knowledge Proofs (ZKP)</strong>.</p>
+      <p>Bayangkan Anda ingin masuk klub dewasa. Biasanya Anda harus menunjukkan KTP (yang ada alamat dan tanggal lahirnya). Dengan ZKP, Anda cukup membuktikan "Saya di atas 21 tahun" tanpa perlu menunjukkan KTP atau tanggal lahir Anda. Penjaga percaya, privasi Anda aman.</p>
+      <p>Di blockchain, ini artinya kita bisa bertransaksi dengan aman dan jujur, tanpa harus menelanjangi data keuangan kita ke seluruh dunia.</p>
+
+      <h3>Kesimpulan</h3>
+      <p>Dunia crypto sedang berbenah. Kita bergerak dari era "transparansi total yang berbahaya" menuju "privasi yang aman dan bertanggung jawab".</p>
+      
+      <p class="muted"><em>(Artikel ini telah disederhanakan untuk pembaca umum.)</em></p>
+    `
+  },
+
+  {
     id: "panduan-kehalalan-crypto",
-    title: "Panduan Menilai Kehalalan Proyek Crypto: Akad, Riba, Gharar", 
-    kicker: "Panduan Praktis", 
-    img: "https://wp.coinvestasi.com/wp-content/uploads/2021/11/Tiga-Alasan-Crypto-Haram-Menurut-MUI-1024x576.jpg", 
-    read: "8 menit", 
+    title: "Panduan Menilai Kehalalan Proyek Crypto: Akad, Riba, Gharar",
+    kicker: "Panduan Praktis",
+    img: "https://wp.coinvestasi.com/wp-content/uploads/2021/11/Tiga-Alasan-Crypto-Haram-Menurut-MUI-1024x576.jpg",
+    read: "8 menit",
     tags: ["Fiqh Muamalah", "Spot Only", "No Lending"],
     content: `
       <p>Dalam dunia cryptocurrency yang semakin berkembang, umat Muslim memerlukan panduan praktis untuk menilai kehalalan sebuah proyek crypto. Artikel ini akan membahas tiga pilar utama dalam penilaian syariah: Akad, Riba, dan Gharar.</p>
@@ -87,12 +130,12 @@ const trending = [
       <p class="muted"><em>Disclaimer: Artikel ini bersifat edukatif dan bukan fatwa resmi. Selalu konsultasikan dengan ulama atau lembaga fatwa terpercaya untuk keputusan investasi Anda.</em></p>
     `
   },
-  { 
+  {
     id: "staking-vs-ijarah",
-    title: "Apakah Staking = Ijarah? Membongkar Analogi & Konsekuensinya", 
-    kicker: "Opini Ulama", 
-    img: "https://reku.id/_next/image?url=https%3A%2F%2Fapi-blog.reku.id%2Fwp-content%2Fuploads%2F2024%2F07%2Fapa-itu-staking-crypto.webp&w=3840&q=75", 
-    read: "6 menit", 
+    title: "Apakah Staking = Ijarah? Membongkar Analogi & Konsekuensinya",
+    kicker: "Opini Ulama",
+    img: "https://reku.id/_next/image?url=https%3A%2F%2Fapi-blog.reku.id%2Fwp-content%2Fuploads%2F2024%2F07%2Fapa-itu-staking-crypto.webp&w=3840&q=75",
+    read: "6 menit",
     tags: ["Staking", "Ijarah"],
     content: `
       <p>Salah satu perdebatan terpanas dalam crypto syariah adalah: apakah staking cryptocurrency dapat dikategorikan sebagai ijarah (sewa) yang halal? Mari kita bedah analogi ini secara mendalam.</p>
@@ -167,7 +210,7 @@ const trending = [
       <p class="muted"><em>Penting: Ini adalah analisis akademis, bukan fatwa. Untuk keputusan praktis, konsultasikan dengan dewan syariah atau ulama yang berkompeten.</em></p>
     `
   },
-  { 
+  {
     id: "checklist-syariah-exchange",
     title: "Checklist Syariah untuk Exchange: Dari KYC hingga Mekanisme Market",
     kicker: "Audit",
@@ -218,7 +261,7 @@ const trending = [
       <p>Exchange syariah bukan hanya soal tidak ada riba, tapi juga soal amanah, keadilan, dan transparansi. Gunakan checklist ini untuk memilih platform yang sesuai nilai Islam.</p>
     `
   },
-  { 
+  {
     id: "zakat-kripto",
     title: "Zakat Kripto: Metode Penilaian, Nishab, dan Waktu Pembayaran",
     kicker: "Zakat",
@@ -257,7 +300,7 @@ const trending = [
       <p>Zakat kripto memperkuat nilai keadilan dalam ekonomi digital. Selama syarat kepemilikan, nishab, dan haul terpenuhi, maka zakat harus dikeluarkan sebagaimana harta lainnya.</p>
     `
   },
-  { 
+  {
     id: "token-rwa-kepemilikan-riil",
     title: "Token Beragun Aset (RWA): Bagaimana Menilai Kepemilikan Riil?",
     kicker: "Riset RWA",
@@ -300,7 +343,7 @@ const trending = [
       <p>RWA dapat menjadi jembatan antara ekonomi digital dan keuangan syariah — asalkan struktur akad, kepemilikan, dan auditnya transparan. Jika tidak, tokenisasi hanya menjadi klaim digital tanpa hak milik sah.</p>
     `
   },
-  { 
+  {
     id: "nft-milkiyah-hak-guna",
     title: "NFT sebagai Bukti Kepemilikan: Antara Milkiyah dan Hak Guna",
     kicker: "Hukum & Teknologi",
@@ -346,7 +389,7 @@ const trending = [
 /* ---------- Education Data ---------- */
 const EDU = {
   sharia: [
-    { 
+    {
       id: "akad-aset-digital",
       title: "Akad dalam Aset Digital: Bai', Ijarah, Syirkah",
       kicker: "Sharia",
@@ -377,7 +420,7 @@ const EDU = {
         <p class="muted"><em>Catatan: Artikel ini bersifat edukatif dan bukan fatwa. Untuk keputusan hukum, konsultasikan dengan ulama yang kompeten dalam fiqh muamalah kontemporer.</em></p>
       `
     },
-    { 
+    {
       id: "riba-gharar-tokenomics",
       title: "Riba & Gharar: Cara Audit Tokenomics",
       kicker: "Sharia",
@@ -423,7 +466,7 @@ const EDU = {
   ],
 
   blockchain: [
-    { 
+    {
       id: "konsensus-pow-pos",
       title: "Cara Kerja Konsensus: PoW vs PoS (Non-Riba)",
       kicker: "Blockchain",
@@ -461,7 +504,7 @@ const EDU = {
         <p>PoW dan PoS sama-sama memiliki dasar yang bisa diterima dalam ekonomi syariah, asalkan mekanisme reward dan kepemilikan asetnya jelas. Prinsip utamanya: “<em>La riba, la gharar, la zulm</em>” — tanpa riba, tanpa ketidakjelasan, tanpa kezaliman.</p>
       `
     },
-    { 
+    {
       id: "layer2-rollup-validium",
       title: "Layer-2 101: Rollup, Validium, & Biaya",
       kicker: "Blockchain",
@@ -497,7 +540,7 @@ const EDU = {
   ],
 
   crypto: [
-    { 
+    {
       id: "spot-only-pemula",
       title: "Spot-Only Strategy untuk Pemula",
       kicker: "Crypto",
@@ -530,7 +573,7 @@ const EDU = {
         <p>Spot-only adalah jalan tengah antara partisipasi dalam inovasi dan menjaga prinsip syariah. Fokuslah pada pemahaman, bukan sekadar profit cepat.</p>
       `
     },
-    { 
+    {
       id: "staking-ijarah-analogi",
       title: "Staking & Delegasi: Analogi Ijarah",
       kicker: "Crypto",
@@ -572,10 +615,11 @@ const RESEARCH_DATA = {
   tech: [
     { title: "Mekanisme Liquid Staking: Potensi Riba & Solusinya", kicker: "Teknologi & Protokol", img: "https://cdn.prod.website-files.com/67cafd5252963054f086f1fd/67cafd5352963054f086f575_Liquid_Staking.jpg", read: "11 menit", tags: ["Staking", "Riba"], href: "#" },
     { title: "Struktur Token RWA (Real World Asset) yang Sesuai Syariah", kicker: "Teknologi & Protokol", img: "https://blog.digitalexchange.id/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-22-at-09.56.42_b2e38694-980x560.jpg", read: "14 menit", tags: ["RWA", "Akad"], href: "#" },
+    trending.find(a => a.id === "paradoks-kaca-hutan-gelap"),
   ],
   market: [
-     { title: "Studi Kasus: Screening Saham Syariah vs Screening Token Kripto", kicker: "Studi Kasus Pasar", img: "https://academy-public.coinmarketcap.com/optimized-uploads/5b1f39cbcc8644a9bec3ab74cdadceda.png", read: "10 menit", tags: ["Screening", "Metodologi"], href: "#" },
-     { title: "Analisis Risiko Gharar pada Protokol DeFi Otomatis", kicker: "Studi Kasus Pasar", img: "https://www.debutinfotech.com/_next/image?url=https%3A%2F%2Fblogs.debutinfotech.com%2Fwp-content%2Fuploads%2F2024%2F08%2FTop-DeFi-Protocols.jpg&w=1920&q=85", read: "13 menit", tags: ["DeFi", "Gharar"], href: "#" },
+    { title: "Studi Kasus: Screening Saham Syariah vs Screening Token Kripto", kicker: "Studi Kasus Pasar", img: "https://academy-public.coinmarketcap.com/optimized-uploads/5b1f39cbcc8644a9bec3ab74cdadceda.png", read: "10 menit", tags: ["Screening", "Metodologi"], href: "#" },
+    { title: "Analisis Risiko Gharar pada Protokol DeFi Otomatis", kicker: "Studi Kasus Pasar", img: "https://www.debutinfotech.com/_next/image?url=https%3A%2F%2Fblogs.debutinfotech.com%2Fwp-content%2Fuploads%2F2024%2F08%2FTop-DeFi-Protocols.jpg&w=1920&q=85", read: "13 menit", tags: ["DeFi", "Gharar"], href: "#" },
   ]
 };
 
@@ -660,7 +704,7 @@ if (page === "index.html" || page === "") {
   }
   function autoplay() { clearInterval(timer); timer = setInterval(() => updateSlide(1), 5200); }
   renderSlides();
-  
+
   const slidesEl2 = document.getElementById("slides");
   if (slidesEl2) {
     slidesEl2.addEventListener("pointerdown", (e) => {
@@ -763,11 +807,11 @@ if (page === "community.html") {
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetTab = btn.dataset.tab;
-      
+
       // Remove active class from all
       tabBtns.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
-      
+
       // Add active class to clicked
       btn.classList.add('active');
       document.getElementById(`${targetTab}-content`).classList.add('active');
@@ -776,7 +820,7 @@ if (page === "community.html") {
 
   // Render Discord channels
   renderCardsInto(document.getElementById("disc-channels"), DISCORD_CHANNELS);
-  
+
   // Render Services
   renderCardsInto(document.getElementById("svc-list"), SERVICES);
 }
@@ -786,7 +830,7 @@ if (page === "education.html") {
   renderCardsInto(document.getElementById("edu-sharia"), EDU.sharia);
   renderCardsInto(document.getElementById("edu-blockchain"), EDU.blockchain);
   renderCardsInto(document.getElementById("edu-crypto"), EDU.crypto);
-  
+
   // Webinar sections
   renderCardsInto(document.getElementById("wb-upcoming"), webinarS.upcoming);
   renderCardsInto(document.getElementById("wb-past"), webinarS.past);
@@ -795,7 +839,7 @@ if (page === "education.html") {
   document.getElementById("edu-q")?.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
     const filter = arr => arr.filter(t => (t.title + " " + t.kicker + " " + (t.tags || []).join(" ")).toLowerCase().includes(q));
-    
+
     renderCardsInto(document.getElementById("edu-sharia"), q ? filter(EDU.sharia) : EDU.sharia);
     renderCardsInto(document.getElementById("edu-blockchain"), q ? filter(EDU.blockchain) : EDU.blockchain);
     renderCardsInto(document.getElementById("edu-crypto"), q ? filter(EDU.crypto) : EDU.crypto);
@@ -828,7 +872,7 @@ if (page === "webinar.html") {
   if (!supportsEnv) {
     document.documentElement.style.setProperty('--safe-bottom', '0px');
   }
-  
+
   const inputs = document.querySelectorAll('input, textarea');
   inputs.forEach(el => {
     el.addEventListener('focus', () => document.body.classList.add('kb-open'));
@@ -858,7 +902,7 @@ if (page === "webinar.html") {
   const applyTheme = (theme) => {
     // Menambahkan/menghapus class 'light-mode' pada body
     body.classList.toggle('light-mode', theme === 'light');
-    
+
     // Sinkronisasi status checkbox dengan tema yang aktif
     if (toggle) {
       // 'checked' berarti toggle "On", yang kita set sebagai dark mode
@@ -890,7 +934,7 @@ if (page === "webinar.html") {
 if (page === "article.html") {
   const urlParams = new URLSearchParams(window.location.search);
   const articleId = urlParams.get('id');
-  
+
   // Gabungkan semua data artikel
   const allArticles = [
     ...trending,
@@ -905,9 +949,9 @@ if (page === "article.html") {
     ...webinarS.upcoming,
     ...webinarS.past
   ];
-  
+
   const article = allArticles.find(a => a.id === articleId);
-  
+
   if (article) {
     document.getElementById('articleKicker').textContent = article.kicker || '';
     document.getElementById('articleTitle').textContent = article.title;
@@ -915,13 +959,13 @@ if (page === "article.html") {
     document.getElementById('articleImage').src = article.img;
     document.getElementById('articleImage').alt = article.title;
     document.getElementById('articleBody').innerHTML = article.content || '<p>Konten artikel sedang dalam proses pengembangan.</p>';
-    
+
     // Render tags
     const tagsEl = document.getElementById('articleTags');
     if (article.tags && article.tags.length > 0) {
       tagsEl.innerHTML = article.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
     }
-    
+
     // Update page title
     document.title = `${article.title} - CryptoSharia News`;
   } else {
