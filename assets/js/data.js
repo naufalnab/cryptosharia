@@ -49,6 +49,41 @@ const trending = [
       <p>Bayangkan Anda ingin mengikuti pemungutan suara (voting) yang rahasia. Biasanya Anda harus menunjukkan KTP untuk verifikasi identitas. Dengan ZKP, Anda bisa membuktikan "Saya warga yang berhak memilih" tanpa perlu petugas tahu siapa nama Anda atau alamat rumah Anda. Suara Anda terhitung sah, namun identitas Anda tetap terjaga.</p>
       <p>Di blockchain, ini artinya kita bisa bertransaksi dengan aman dan jujur, tanpa harus menelanjangi data keuangan kita ke seluruh dunia.</p>
 
+      <p>Di blockchain, ini artinya kita bisa bertransaksi dengan aman dan jujur, tanpa harus menelanjangi data keuangan kita ke seluruh dunia.</p>
+
+      <h3>ZKP vs Modular Privacy: Apa Bedanya?</h3>
+      <p>Jika ZKP adalah <strong>"mesinnya"</strong> (teknologinya), maka Modular Privacy adalah <strong>"arsitekturnya"</strong> (cara pasangnya). Mari kita bedah dengan analogi sederhana: <strong>Rumah Kaca vs Gorden Pintar</strong>.</p>
+
+      <h4>1. Masalah Lama: Rumah Kaca vs Bunker</h4>
+      <p>Dulu, dunia blockchain terbagi dua kubu ekstrem:</p>
+      <ul>
+        <li><strong>Kubu Transparan (Bitcoin/Ethereum):</strong> Ibarat <strong>Rumah Kaca</strong>. Aman karena semua orang bisa mengawasi, tapi privasi nol. Semua orang tahu Anda sedang makan apa.</li>
+        <li><strong>Kubu Privat (Monero/Zcash):</strong> Ibarat <strong>Bunker Beton</strong>. Tertutup rapat. Privasi maksimal, tapi pemerintah curiga, "Jangan-jangan di dalam lagi merakit bom?". Akibatnya, koin ini sering dilarang (banned).</li>
+      </ul>
+
+      <h4>2. Solusi Baru: Modular Privacy (Rumah Kaca dengan Gorden)</h4>
+      <p>Modular Privacy adalah jalan tengahnya. Bayangkan Rumah Kaca tadi, tapi sekarang Anda memasang <strong>Gorden Pintar</strong> di kamar tidur.</p>
+      <ul>
+        <li>Ruang tamu tetap transparan (publik tahu Anda ada di rumah).</li>
+        <li>Saat masuk kamar pribadi, Anda tarik gordennya (privasi aktif).</li>
+        <li>Setelah selesai, Anda buka lagi.</li>
+      </ul>
+      <p>Artinya: Blockchain utamanya tetap transparan (aman & terpercaya), tapi aktivitas sensitif dilakukan di lapisan terpisah yang privat.</p>
+
+      <h4>3. Cara Kerjanya: Kotak Hitam</h4>
+      <p>Anda mengirim aset ke "Kotak Hitam" (Layer Eksekusi seperti Aztec). Di dalam kotak itu, Anda bebas bertransaksi tanpa dilihat orang. Setelah selesai, kotak hitam hanya melapor ke Ethereum: <em>"User ini sudah selesai trading, saldo akhirnya sekian."</em> Ethereum mencatat saldo akhir tanpa perlu tahu detail dapurnya.</p>
+
+      <h4>4. Keunggulan Utama: Kepatuhan (Compliance)</h4>
+      <p>Ini fitur andalannya. Di Modular Privacy (seperti <strong>Midnight</strong> atau <strong>Aztec</strong>), ada fitur "Viewing Key". Anda bisa memberikan kunci khusus ini ke Auditor atau Petugas Pajak (atau Dewan Syariah) untuk melihat transaksi Anda, tanpa membukanya ke seluruh dunia.</p>
+      <p><em>"Privasi bagi publik, Transparansi bagi regulator."</em></p>
+
+      <h4>Contoh Proyek</h4>
+      <ul>
+        <li><strong>Aztec Network:</strong> Layer 2 Ethereum yang terenkripsi ("Encrypted Ethereum").</li>
+        <li><strong>Midnight:</strong> Sidechain Cardano untuk perlindungan data bisnis.</li>
+        <li><strong>Secret Network:</strong> Smart contract yang otomatis terenkripsi.</li>
+      </ul>
+
       <h3>Kenapa Kita Butuh Privasi? (Bukan Cuma Buat Kriminal)</h3>
       <p>Dulu, privasi identik dengan menyembunyikan kejahatan. Tapi di era Web3, privasi adalah soal <strong>kedaulatan data</strong>.</p>
 
