@@ -49,6 +49,21 @@ const trending = [
       <p>Bayangkan Anda ingin mengikuti pemungutan suara (voting) yang rahasia. Biasanya Anda harus menunjukkan KTP untuk verifikasi identitas. Dengan ZKP, Anda bisa membuktikan "Saya warga yang berhak memilih" tanpa perlu petugas tahu siapa nama Anda atau alamat rumah Anda. Suara Anda terhitung sah, namun identitas Anda tetap terjaga.</p>
       <p>Di blockchain, ini artinya kita bisa bertransaksi dengan aman dan jujur, tanpa harus menelanjangi data keuangan kita ke seluruh dunia.</p>
 
+      <h3>Kenapa Kita Butuh Privasi? (Bukan Cuma Buat Kriminal)</h3>
+      <p>Dulu, privasi identik dengan menyembunyikan kejahatan. Tapi di era Web3, privasi adalah soal <strong>kedaulatan data</strong>.</p>
+
+      <h4>1. Agar Uang Tetap "Setara" (Fungibility)</h4>
+      <p>Uang Rp100.000 lusuh nilainya sama dengan yang baru dari ATM. Tapi di blockchain yang terlalu transparan, jika koin Anda pernah mampir di dompet judi (walau bukan Anda pelakunya), koin itu bisa di-blacklist. Teknologi privasi memastikan "uang tetaplah uang" yang bisa diterima di mana saja.</p>
+
+      <h4>2. Keamanan Tingkat Institusi</h4>
+      <p>Bayangkan perusahaan menggunakan blockchain untuk menggaji karyawan. Tanpa privasi, kompetitor bisa tahu persis berapa gaji setiap staf dan siapa supplier mereka. Privasi membuat blockchain aman digunakan untuk bisnis serius.</p>
+
+      <h3>Kegunaan Lain: Login Tanpa Sebar Data</h3>
+      <p>Pernahkah Anda kesal harus memberi nomor HP hanya untuk login aplikasi? Dengan teknologi privasi (Identity Management), Anda bisa login cukup dengan bukti kriptografi, tanpa menyerahkan data pribadi ke server perusahaan.</p>
+
+      <h3>Sudut Pandang Syariah: Menjaga Harta (Hifz al-Mal)</h3>
+      <p>Dalam Islam, privasi bukan sarana maksiat, melainkan bentuk perlindungan. Menjaga harta dari pandangan hasad (<strong>'Ain</strong>) dan pencurian adalah bagian dari <em>Maqasid Syariah</em> (Hifz al-Mal). Selama tidak digunakan untuk penipuan (<em>gharar</em>) atau judi (<em>maisir</em>), fitur privasi justru melindungi martabat dan keamanan pemilik harta.</p>
+
       <h3>Kesimpulan</h3>
       <p>Dunia crypto sedang berbenah. Kita bergerak dari era "transparansi total yang berbahaya" menuju "privasi yang aman dan bertanggung jawab".</p>
       
